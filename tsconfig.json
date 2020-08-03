@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "lib": [
+      "DOM",
+      "ES2017"
+    ],
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+  },
+  // Ignore undeveloped files and folders
+  "exclude": [
+    "node_modules",
+    "public",
+    ".cache"
+  ],
+  // Only type-check this folder
+  "include": [
+    "src"
+  ]
+}
