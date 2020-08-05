@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "gatsby": "^2.23.12",
+    "gatsby-plugin-manifest": "^2.4.21",
+    "gatsby-plugin-offline": "^3.2.21",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-typescript": "^2.4.16",
     "react": "^16.12.0",
