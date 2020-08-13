@@ -18,6 +18,30 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
+    "baseUrl": "./src",
+    "paths": {
+      "@components": [
+        "components"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@pages": [
+        "pages"
+      ],
+      "@pages/*": [
+        "pages/*"
+      ],
+      "@generated/*": [
+        "generated/*"
+      ],
+      "@styles": [
+        "styles"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ]
+    }
   },
   // Ignore undeveloped files and folders
   "exclude": [

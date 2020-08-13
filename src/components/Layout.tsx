@@ -6,8 +6,17 @@
 import React from "react";
 import "../styles/main.scss";
 
-const Layout: React.FC = ({ children }) => {
-  return <div>{children}</div>;
+interface PageProps {
+  title?: string;
+  description?: string;
+}
+
+const Layout: React.FC<PageProps> = ({ children }) => {
+  return (
+    <>
+      <div>{children}</div>
+    </>
+  );
 };
 
 export default Layout;

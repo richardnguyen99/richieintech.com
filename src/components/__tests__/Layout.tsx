@@ -4,6 +4,7 @@
  * @author Richard Nguyen <richard.ng0616@gmail.com>
  */
 import React from "react";
+import { StaticQuery } from "gatsby";
 import renderer from "react-test-renderer";
 
 import Layout from "../Layout";

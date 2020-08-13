@@ -37,6 +37,7 @@ module.exports = {
     /**
      * @description general rules
      */
+    "import/no-unresolved": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
