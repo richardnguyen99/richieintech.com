@@ -18,5 +18,18 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Richie In Tech",
+        short_name: "richieintech",
+        start_url: "/",
+        background_color: "#6b37bf",
+        theme_color: "#6b37bf",
+        display: "standalone",
+        crossOrigin: `use-credentials`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 };
