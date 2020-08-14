@@ -3,6 +3,7 @@
  */
 
 import React from "react";
+import "./static/font.css";
 
 // eslint-disable-next-line import/prefer-default-export
 export const wrapRootElement = ({ element }) => {

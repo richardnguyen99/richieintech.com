@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "SF Mono";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./fonts/SFMono/SFMono-Heavy.otf") format("otf");
+}
+@font-face {
+  font-family: "SF Mono";
+  font-style: italic;
+  font-weight: 900;
+  src: url("./fonts/SFMono/SFMono-HeavyItalic.otf") format("otf");
+}
+@font-face {
+  font-family: "SF Mono";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./fonts/SFMono/SFMono-Semibold.otf") format("otf");
+}
+@font-face {
+  font-family: "SF Mono";
+  font-style: italic;
+  font-weight: 800;
+  src: url("./fonts/SFMono/SFMono-BoldItalic.otf") format("otf");
+}
+@font-face {
+  font-family: "SF Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/SFMono/SFMono-Semibold.otf") format("otf");
+}
+@font-face {
+  font-family: "SF Mono";
+  font-style: italic;
+  font-weight: 700;
+  src: url("./fonts/SFMono/SFMono-SemiboldItalic.otf") format("otf");
+}
+@font-face {
+  font-family: "SF Mono";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/SFMono/SFMono-Medium.otf") format("otf");
+}
+@font-face {
+  font-family: "SF Mono";
+  font-style: italic;
+  font-weight: 600;
+  src: url("./fonts/SFMono/SFMono-MediumItalic.otf") format("otf");
+}
+@font-face {
+  font-family: "SF Mono";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/SFMono/SFMono-Regular.otf") format("otf");
+}
+@font-face {
+  font-family: "SF Mono";
+  font-style: italic;
+  font-weight: 500;
+  src: url("./fonts/SFMono/SFMono-RegularItalic.otf") format("otf");
+}
+@font-face {
+  font-family: "SF Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/SFMono/SFMono-Light.otf") format("otf");
+}
+@font-face {
+  font-family: "SF Mono";
+  font-style: italic;
+  font-weight: 400;
+  src: url("./fonts/SFMono/SFMono-LightItalic.otf") format("otf");
+}

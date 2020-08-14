@@ -30,6 +30,14 @@ const SEO: React.FC<SEOProps> = ({ data }) => {
 
   return (
     <Helmet title={defaultTitle} titleTemplate={titleTemplate}>
+      <script type="application/json+ld">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Website",
+          url: "https://www.richieintech.com",
+          name: "Richie In Tech",
+        })}
+      </script>
       <meta name="description" content={defaultDescription} />
       {siteUrl && <meta property="og:url" content={siteUrl} />}
       {defaultTitle && <meta property="og:title" content={defaultTitle} />}
