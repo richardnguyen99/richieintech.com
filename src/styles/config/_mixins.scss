@@ -1,0 +1,22 @@
+// General container component to provide necessary paddings
+// and spacings to child components
+@mixin generate-container($padding-x: $container-padding-x) {
+  width: 100%;
+  padding-left: $padding-x;
+  padding-right: $padding-x;
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin media-breakpoint-min-width($name, $breakpoints: $grid-breakpoints) {
+  $min: get-breakpoint($name, $breakpoints);
+
+  @if $min {
+    @media screen and (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

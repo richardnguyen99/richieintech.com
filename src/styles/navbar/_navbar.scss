@@ -1,5 +1,19 @@
 // Navbar content
-.navbar {
-  align-items: center;
+
+.Navbar {
   display: flex;
+  align-items: center;
+
+  // Flex properties aren't inherited, that's why we need
+  // to redeclare these first core properties.
+  %inherit-navbar-flex-properties {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  > .Container {
+    @extend %inherit-navbar-flex-properties;
+  }
 }

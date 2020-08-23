@@ -4,6 +4,8 @@
  * @author Richard Nguyen <richard.ng0616@gmail.com>
  */
 import React from "react";
+
+import Header from "./Header";
 import "../styles/main.scss";
 
 interface PageProps {
@@ -14,6 +16,7 @@ interface PageProps {
 const Layout: React.FC<PageProps> = ({ children }) => {
   return (
     <>
+      <Header />
       <div>{children}</div>
     </>
   );
