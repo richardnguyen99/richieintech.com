@@ -4,5 +4,5 @@
 }
 
 @function get-infix-breakpoint($name, $breakpoints: $grid-breakpoints) {
-  @return if(get-breakpoint($name, $breakpoints) == null, "", "--#{$name}");
+  @return if(get-breakpoint($name, $breakpoints) == null, "", "-#{$name}");
 }

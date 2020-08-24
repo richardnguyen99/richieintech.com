@@ -3,6 +3,12 @@
 .Navbar {
   display: flex;
   align-items: center;
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
 
   // Flex properties aren't inherited, that's why we need
   // to redeclare these first core properties.
@@ -15,5 +21,60 @@
 
   > .Container {
     @extend %inherit-navbar-flex-properties;
+  }
+
+  @include media-breakpoint-min-width(xl) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    &__dropdown {
+      position: absolute;
+    }
+
+    &__collapse {
+      display: flex;
+    }
+
+    &__nav {
+      flex-direction: row;
+    }
+  }
+
+  // Navbar__brand
+  &__brand {
+    display: inline-block;
+
+    padding-top: 0.375rem;
+    padding-bottom: 0.375rem;
+    margin-right: 0.5rem;
+
+    font-family: $font-heading;
+    font-weight: 800;
+    font-size: 1.25rem;
+    text-decoration: none;
+    // text-transform: uppercase;
+
+    white-space: nowrap;
+    line-height: 2;
+  }
+
+  // Navbar__nav
+  &__nav {
+    display: flex;
+
+    padding-left: 2rem;
+
+    list-style: none;
+
+    > .Navbar__item {
+      padding: 0.5rem;
+      margin: 0.5rem;
+    }
+  }
+
+  // Navbar__collapse
+  &__collapse {
+    align-items: center;
+    width: 100%;
   }
 }

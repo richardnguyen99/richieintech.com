@@ -1,0 +1,66 @@
+// Spacing
+
+@each $breakpoint, $width in $grid-breakpoints {
+  @include media-breakpoint-min-width($breakpoint) {
+    $infix: get-infix-breakpoint($breakpoint, $grid-breakpoints);
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $spacers {
+        // For all margin and padding properties
+        .#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: $length !important;
+        }
+
+        .#{$abbrev}t#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+        }
+
+        .#{$abbrev}r#{$infix}-#{$size} {
+          #{$prop}-right: $length !important;
+        }
+
+        .#{$abbrev}b#{$infix}-#{$size} {
+          #{$prop}-bottom: $length !important;
+        }
+
+        .#{$abbrev}l#{$infix}-#{$size} {
+          #{$prop}-left: $length !important;
+        }
+
+        .#{$abbrev}x#{$infix}-#{$size} {
+          #{$prop}-right: $length !important;
+          #{$prop}-left: $length !important;
+        }
+
+        .#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+          #{$prop}-bottom: $length !important;
+        }
+      }
+    }
+
+    .m#{$infix}-auto {
+      margin: auto;
+    }
+    .mt#{$infix}-auto {
+      margin-top: auto;
+    }
+    .mb#{$infix}-auto {
+      margin-bottom: auto;
+    }
+    .ml#{$infix}-auto {
+      margin-left: auto;
+    }
+    .mr#{$infix}-auto {
+      margin-right: auto;
+    }
+    .mx#{$infix}-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .my#{$infix}-auto {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+}
