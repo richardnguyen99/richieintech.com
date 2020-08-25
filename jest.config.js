@@ -4,6 +4,8 @@ module.exports = {
     "^.+\\.[jt]sx?$": "<rootDir>/jest-preprocess.js",
   },
   moduleNameMapper: {
+    "^@context(.*)$": "<rootDir>/src/context/$1",
+    "^@hooks(.*)$": "<rootDir>/src/hooks/$1",
     "^@components(.*)$": "<rootDir>/src/components/$1",
     "^@pages(.*)$": "<rootDir>/src/pages/$1",
     "^@styles(.*)$": "<rootDir>/src/styles/$1",

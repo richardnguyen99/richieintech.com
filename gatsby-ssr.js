@@ -1,5 +1,5 @@
 /**
- * Gatsby configuration for developing
+ * Gatsby configuration for production
  */
 
 import React from "react";

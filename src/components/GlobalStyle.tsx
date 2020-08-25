@@ -11,6 +11,18 @@ const GlobalStyle = createGlobalStyle`
   /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
   /* stylelint-disable property-no-vendor-prefix */
 
+  :root {
+    --color-text: ${props => (props.theme.mode === "light" ? `#000` : `#fff`)};
+    --color-bg: ${props => (props.theme.mode === "light" ? `#fff` : `#3c3c3c`)};
+  }
+
+  *,
+  *::before,
+  *::after {
+    outline: none;
+    box-sizing: border-box;
+  }
+
   html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -20,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
+    background-color: var(--color-bg);
   }
 
 
