@@ -3,7 +3,7 @@
 exports[`Index page matches snapshot 1`] = `
 Array [
   <nav
-    className="Navbar"
+    className="Navbar Navbar--light"
     id="main-header"
   >
     <div
@@ -50,17 +50,32 @@ Array [
         <li
           className="Navbar__item"
         >
-          Hello
+          <a
+            className="Navbar__link"
+            href="/blog"
+          >
+            Tag
+          </a>
         </li>
         <li
           className="Navbar__item"
         >
-          Hello
+          <a
+            className="Navbar__link"
+            href="/blog"
+          >
+            Blog
+          </a>
         </li>
         <li
           className="Navbar__item"
         >
-          Hello
+          <a
+            className="Navbar__link"
+            href="/blog"
+          >
+            Guide
+          </a>
         </li>
       </ul>
       <div
@@ -72,7 +87,7 @@ Array [
           <li
             className="Navbar__item"
           >
-            Hello
+            About
           </li>
           <li
             className="Navbar__item"

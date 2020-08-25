@@ -6,7 +6,6 @@
 import React from "react";
 
 import Header from "./Header";
-import "../styles/main.scss";
 
 interface PageProps {
   title?: string;

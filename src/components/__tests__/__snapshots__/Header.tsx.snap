@@ -2,7 +2,7 @@
 
 exports[`Header rendered correctly 1`] = `
 <nav
-  className="Navbar"
+  className="Navbar Navbar--light"
   id="main-header"
 >
   <div
@@ -49,17 +49,32 @@ exports[`Header rendered correctly 1`] = `
       <li
         className="Navbar__item"
       >
-        Hello
+        <a
+          className="Navbar__link"
+          href="/blog"
+        >
+          Tag
+        </a>
       </li>
       <li
         className="Navbar__item"
       >
-        Hello
+        <a
+          className="Navbar__link"
+          href="/blog"
+        >
+          Blog
+        </a>
       </li>
       <li
         className="Navbar__item"
       >
-        Hello
+        <a
+          className="Navbar__link"
+          href="/blog"
+        >
+          Guide
+        </a>
       </li>
     </ul>
     <div
@@ -71,7 +86,7 @@ exports[`Header rendered correctly 1`] = `
         <li
           className="Navbar__item"
         >
-          Hello
+          About
         </li>
         <li
           className="Navbar__item"
