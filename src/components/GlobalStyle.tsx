@@ -154,9 +154,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
 
-  svg:not(:root) {
+  /* svg:not(:root) {
     overflow: hidden;
-  }
+  }*/
 
 
 

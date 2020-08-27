@@ -3,10 +3,10 @@
  *
  * @author Richard Nguyen <richard.ng0616@gmail.com>
  */
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-import { Moon, Logo } from "./svg";
+import { ThemeSwitch } from "./svg";
 import Container from "./Container";
 
 const StyledNavbarContainer = styled(Container)`
@@ -98,6 +98,15 @@ const StyledNavbarButton = styled.button`
 `;
 
 const Header: React.FC = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const onToggleHandle = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ): void => {
+    e.preventDefault();
+    setToggle(!toggle);
+  };
+
   return (
     <StyledNavbarContainer>
       <StyledNavbar>
@@ -134,8 +143,8 @@ const Header: React.FC = () => {
           <StyledNavbarNavigation id="right">
             <StyledNavbarNavigationItem>
               <StyledNavbarNavigationWrapper>
-                <StyledNavbarButton>
-                  <Moon />
+                <StyledNavbarButton onClick={onToggleHandle}>
+                  <ThemeSwitch toggle={toggle} />
                 </StyledNavbarButton>
               </StyledNavbarNavigationWrapper>
             </StyledNavbarNavigationItem>

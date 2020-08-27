@@ -3,16 +3,16 @@
 exports[`Index page matches snapshot 1`] = `
 Array [
   <div
-    className="sc-AxjAm sc-AxirZ etNkSM"
+    className="sc-AxirZ sc-AxiKw bHPNQk"
   >
     <header
-      className="sc-AxiKw eXooPQ"
+      className="sc-AxhCb IZlRw"
     >
       <div
-        className="sc-AxhUy byBNkN"
+        className="sc-AxgMl cjEjyT"
       >
         <a
-          className="sc-AxhCb iBbIXs"
+          className="sc-AxhUy bWQlwJ"
           href="/"
         >
           <span>
@@ -23,16 +23,16 @@ Array [
           </span>
         </a>
         <ul
-          className="sc-AxheI iHBBLX"
+          className="sc-Axmtr eiQrNU"
         >
           <li
-            className="sc-Axmtr iOuNzX"
+            className="sc-AxmLO rzArC"
           >
             <div
-              className="sc-AxmLO MKJBh"
+              className="sc-fzozJi cKrXJI"
             >
               <a
-                className="sc-fzozJi jDNkXB"
+                className="sc-fzoLsD kzMWOn"
                 href="/post"
               >
                 Posts
@@ -40,13 +40,13 @@ Array [
             </div>
           </li>
           <li
-            className="sc-Axmtr iOuNzX"
+            className="sc-AxmLO rzArC"
           >
             <div
-              className="sc-AxmLO MKJBh"
+              className="sc-fzozJi cKrXJI"
             >
               <a
-                className="sc-fzozJi jDNkXB"
+                className="sc-fzoLsD kzMWOn"
                 href="/snippets"
               >
                 Snippets
@@ -54,13 +54,13 @@ Array [
             </div>
           </li>
           <li
-            className="sc-Axmtr iOuNzX"
+            className="sc-AxmLO rzArC"
           >
             <div
-              className="sc-AxmLO MKJBh"
+              className="sc-fzozJi cKrXJI"
             >
               <a
-                className="sc-fzozJi jDNkXB"
+                className="sc-fzoLsD kzMWOn"
                 href="/"
               >
                 Newsletter
@@ -70,33 +70,132 @@ Array [
         </ul>
       </div>
       <div
-        className="sc-AxgMl eoBxKd"
+        className="sc-AxheI gPwTLT"
       >
         <ul
-          className="sc-AxheI iHBBLX"
+          className="sc-Axmtr eiQrNU"
           id="right"
         >
           <li
-            className="sc-Axmtr iOuNzX"
+            className="sc-AxmLO rzArC"
           >
             <div
-              className="sc-AxmLO MKJBh"
+              className="sc-fzozJi cKrXJI"
             >
               <button
-                className="sc-fzoLsD iJFsiZ"
+                className="sc-fzpans kZRnhV"
+                onClick={[Function]}
               >
                 <svg
-                  fill="none"
+                  className="sc-AxjAm fITGcA"
                   height={18}
-                  viewBox="0 0 48 48"
+                  style={
+                    Object {
+                      "transform": "rotate(40deg)",
+                      "transformOrigin": "center center",
+                    }
+                  }
+                  viewBox="0 0 18 18"
                   width={18}
                 >
-                  <path
-                    clipRule="evenodd"
-                    d="M48 23.953V24c0 13.255-10.745 24-24 24S0 37.255 0 24C0 11.578 9.437 1.36 21.532.125A17.963 17.963 0 0015 14c0 9.941 8.059 18 18 18 6.26 0 11.775-3.197 15-8.047z"
+                  <mask
+                    id="moon-mask"
+                  >
+                    <rect
+                      fill="#fff"
+                      height={18}
+                      width={18}
+                      x={0}
+                      y={0}
+                    />
+                    <circle
+                      cx={10}
+                      cy={2}
+                      fill="black"
+                      r={8}
+                    />
+                  </mask>
+                  <circle
+                    cx={9}
+                    cy={9}
                     fill="#f5f5f5"
-                    fillRule="evenodd"
+                    mask="url(#moon-mask)"
+                    r={8}
                   />
+                  <g>
+                    <circle
+                      cx={17}
+                      cy={9}
+                      fill="#f5f5f5"
+                      r="1.5"
+                      style={
+                        Object {
+                          "transform": "scale(0)",
+                          "transformOrigin": "center center",
+                        }
+                      }
+                    />
+                    <circle
+                      cx={13}
+                      cy={15.9282}
+                      fill="#f5f5f5"
+                      r="1.5"
+                      style={
+                        Object {
+                          "transform": "scale(0)",
+                          "transformOrigin": "center center",
+                        }
+                      }
+                    />
+                    <circle
+                      cx={5}
+                      cy={15.9282}
+                      fill="#f5f5f5"
+                      r="1.5"
+                      style={
+                        Object {
+                          "transform": "scale(0)",
+                          "transformOrigin": "center center",
+                        }
+                      }
+                    />
+                    <circle
+                      cx={1}
+                      cy={9}
+                      fill="#f5f5f5"
+                      r="1.5"
+                      style={
+                        Object {
+                          "transform": "scale(0)",
+                          "transformOrigin": "center center",
+                        }
+                      }
+                    />
+                    <circle
+                      cx={4}
+                      cy={2.0717}
+                      fill="#f5f5f5"
+                      r="1.5"
+                      style={
+                        Object {
+                          "transform": "scale(0)",
+                          "transformOrigin": "center center",
+                        }
+                      }
+                    />
+                    <circle
+                      cx={13}
+                      cy={2.0717}
+                      fill="#f5f5f5"
+                      r="1.5"
+                      style={
+                        Object {
+                          "transform": "scale(0)",
+                          "transformOrigin": "center center",
+                        }
+                      }
+                    />
+                  </g>
                 </svg>
               </button>
             </div>

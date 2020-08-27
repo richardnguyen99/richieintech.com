@@ -1,5 +1,4 @@
 import Logo from "./Logo";
-import Moon from "./Moon";
-import Sun from "./Sun";
+import ThemeSwitch from "./ThemeSwitch";
 
-export { Logo, Sun, Moon };
+export { Logo, ThemeSwitch };
