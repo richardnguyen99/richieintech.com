@@ -13,7 +13,13 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
     --color-text: ${props => (props.theme.mode === "light" ? `#000` : `#fff`)};
-    --color-bg: ${props => (props.theme.mode === "light" ? `#fff` : `#3c3c3c`)};
+    --color-bg: ${props =>
+      props.theme.mode === "light" ? `#f5f5f5` : `#3c3c3c`};
+    --color-heading: #ff5a5f;
+    --font-serif: "Merriweather", serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-heading: "Montserrat", sans-serif;
+    --font-mono: "SF Mono", monospace;
   }
 
   *,
@@ -78,18 +84,14 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     background-color: transparent;
-  }
-
-
-  a:active,
-  a:hover {
-    outline: 0;
+    text-decoration: none;
+    color: inherit;
   }
 
   a:active,
   a:hover,
   a:visited {
-    color: inherit;
+    outline: 0;
   }
 
 
