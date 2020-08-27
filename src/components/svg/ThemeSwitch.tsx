@@ -70,7 +70,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ toggle }) => {
       <animated.circle
         cx={9}
         cy={9}
-        fill="#f5f5f5"
+        fill="var(--color-text)"
         mask="url(#moon-mask)"
         r={x
           .interpolate({
@@ -86,7 +86,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ toggle }) => {
             cx={cx[index]}
             cy={cy[index]}
             r="1.5"
-            fill="#f5f5f5"
+            fill="var(--color-text)"
             style={{
               ...rest,
               transformOrigin: "center center",

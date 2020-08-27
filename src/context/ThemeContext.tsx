@@ -10,7 +10,7 @@ import useLocalStorage from "@hooks/useLocalStorage";
 
 type ThemeMode = "dark" | "light";
 
-const ThemeContext = React.createContext({
+export const ThemeContext = React.createContext({
   theme: "dark",
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   toggle: () => {},

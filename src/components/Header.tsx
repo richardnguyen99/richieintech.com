@@ -3,9 +3,10 @@
  *
  * @author Richard Nguyen <richard.ng0616@gmail.com>
  */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
+import { ThemeContext } from "@context/ThemeContext";
 import { ThemeSwitch } from "./svg";
 import Container from "./Container";
 
@@ -98,6 +99,8 @@ const StyledNavbarButton = styled.button`
 `;
 
 const Header: React.FC = () => {
+  const themeContext = useContext(ThemeContext);
+
   const [toggle, setToggle] = useState(false);
 
   const onToggleHandle = (
@@ -105,6 +108,7 @@ const Header: React.FC = () => {
   ): void => {
     e.preventDefault();
     setToggle(!toggle);
+    themeContext.toggle();
   };
 
   return (
