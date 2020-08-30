@@ -12,9 +12,11 @@ const GlobalStyle = createGlobalStyle`
   /* stylelint-disable property-no-vendor-prefix */
 
   :root {
-    --color-text: ${props => (props.theme.mode === "light" ? `#000` : `#fff`)};
-    --color-bg: ${props =>
-      props.theme.mode === "light" ? `#f5f5f5` : `#3c3c3c`};
+    --color-text: ${props =>
+      props.theme.mode === "light" ? `#1c1c1e` : `#fff`};
+    --color-bg: ${props => (props.theme.mode === "light" ? `#fff` : `#1c1c1e`)};
+    --color-border: ${props =>
+      props.theme.mode === "light" ? `#fff` : `#333333`};
     --color-heading: #ff5a5f;
     --font-serif: "Merriweather", serif;
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -30,6 +32,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
+    font-size: 16px;
+    overflow-x: hidden;
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -38,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    background-color: var(--color-bg);
+    background: var(--color-bg);
   }
 
 

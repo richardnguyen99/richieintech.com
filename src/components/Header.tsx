@@ -7,11 +7,20 @@ import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
 import { ThemeContext } from "@context/ThemeContext";
-import { ThemeSwitch } from "./svg";
-import Container from "./Container";
+import { container } from "@styles/mixins";
+import { ThemeSwitch, Logo } from "./svg";
 
-const StyledNavbarContainer = styled(Container)`
-  position: sticky;
+const StyledNavbarWrapper = styled.div`
+  /* Use fixed to create a transparent navbar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  mix-blend-mode: difference;
+
+  z-index: 100;
+  opacity: 1;
 `;
 
 const StyledNavbar = styled.header`
@@ -19,8 +28,9 @@ const StyledNavbar = styled.header`
   align-items: center;
   justify-content: space-between;
 
-  padding: 0px;
-  height: 60px;
+  /* Allow navbar align in center */
+  ${container()}
+  padding: 3rem 0 0 0;
 `;
 
 const StyledNavbarBrand = styled.a`
@@ -34,7 +44,7 @@ const StyledNavbarBrand = styled.a`
   font-weight: 500;
   text-decoration: none;
   letter-spacing: -1px;
-  color: var(--color-heading);
+  color: var(--color-text);
 
   &:hover {
     color: var(--color-heading);
@@ -59,6 +69,10 @@ const StyledNavbarNavigation = styled.ul`
   list-style: none;
 `;
 
+const StyledLeftNavbarNavigation = styled(StyledNavbarNavigation)`
+  margin-left: 2rem;
+`;
+
 const StyledNavbarNavigationItem = styled.li`
   margin: 8px;
 `;
@@ -68,14 +82,14 @@ const StyledNavbarNavigationWrapper = styled.div`
 `;
 
 const StyledNavbarNavigationLink = styled.a`
-  color: var(--color-text);
-  font-family: var(--font-heading);
+  color: #fff;
+  font-family: var(--font-sans);
   font-weight: 500;
 
   padding: 8px;
 
   &:hover {
-    color: var(--color-text);
+    color: #fff;
   }
 `;
 
@@ -112,14 +126,13 @@ const Header: React.FC = () => {
   };
 
   return (
-    <StyledNavbarContainer>
+    <StyledNavbarWrapper>
       <StyledNavbar>
         <StyledLeftNavbarMenu>
           <StyledNavbarBrand href="/">
-            <span>Richie</span>
-            <span> Tech</span>
+            <Logo />
           </StyledNavbarBrand>
-          <StyledNavbarNavigation>
+          <StyledLeftNavbarNavigation>
             <StyledNavbarNavigationItem>
               <StyledNavbarNavigationWrapper>
                 <StyledNavbarNavigationLink href="/post">
@@ -141,7 +154,7 @@ const Header: React.FC = () => {
                 </StyledNavbarNavigationLink>
               </StyledNavbarNavigationWrapper>
             </StyledNavbarNavigationItem>
-          </StyledNavbarNavigation>
+          </StyledLeftNavbarNavigation>
         </StyledLeftNavbarMenu>
         <StyledRightNavbarMenu>
           <StyledNavbarNavigation id="right">
@@ -155,7 +168,7 @@ const Header: React.FC = () => {
           </StyledNavbarNavigation>
         </StyledRightNavbarMenu>
       </StyledNavbar>
-    </StyledNavbarContainer>
+    </StyledNavbarWrapper>
   );
 };
 

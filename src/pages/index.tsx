@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { graphql } from "gatsby";
 
 import { SEO, Layout } from "@components";
@@ -22,13 +23,39 @@ interface HomeProps {
   data: IndexQueryQuery;
 }
 
+const StyledHeroWrapper = styled.section`
+  height: 50vh;
+
+  @media screen and (min-width: 768px) {
+    height: 100vh;
+
+    background: linear-gradient(
+      90deg,
+      var(--color-bg) 70%,
+      var(--color-text) 30%
+    );
+  }
+`;
+
+const StyledContentWrapper = styled.section`
+  height: 50vh;
+  background: var(--color-bg);
+  @media screen and (min-width: 768px) {
+    height: 100vh;
+  }
+`;
+
 const Home: React.FC<HomeProps> = ({ data: { site } }) => {
   const SEOData = site?.siteMetadata || {};
+
   return (
-    <Layout>
-      <SEO data={SEOData} />
-      <div>Hello, World!</div>
-    </Layout>
+    <>
+      <Layout>
+        <SEO data={SEOData} />
+        <StyledHeroWrapper />
+        <StyledContentWrapper />
+      </Layout>
+    </>
   );
 };
 
