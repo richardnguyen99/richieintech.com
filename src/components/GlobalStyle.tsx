@@ -31,18 +31,24 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  *:hover {
+    cursor: none !important;
+  }
+
   html {
     font-size: 16px;
     overflow-x: hidden;
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    cursor: none !important;
   }
 
 
   body {
     margin: 0;
     background: var(--color-bg);
+    cursor: none !important;
   }
 
 
@@ -90,6 +96,10 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     text-decoration: none;
     color: inherit;
+  }
+
+  a:hover {
+    cursor: none;
   }
 
   a:active,

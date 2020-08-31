@@ -82,14 +82,14 @@ const StyledNavbarNavigationWrapper = styled.div`
 `;
 
 const StyledNavbarNavigationLink = styled.a`
-  color: #fff;
+  color: var(--color-text);
   font-family: var(--font-sans);
   font-weight: 500;
 
   padding: 8px;
 
   &:hover {
-    color: #fff;
+    color: var(--color-text);
   }
 `;
 

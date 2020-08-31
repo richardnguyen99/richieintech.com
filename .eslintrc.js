@@ -58,6 +58,8 @@ module.exports = {
       },
     ],
     "react/prop-types": "off", // We use typescript to check types, this will be incompatible
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
     /**
      * @description rules of prettier
      */

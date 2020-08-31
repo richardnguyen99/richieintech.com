@@ -55,7 +55,7 @@ exports[`Header rendered correctly 1`] = `
             className="sc-fzozJi cKrXJI"
           >
             <a
-              className="sc-fzoLsD lfNXCQ"
+              className="sc-fzoLsD hqZjvw"
               href="/post"
             >
               Posts
@@ -69,7 +69,7 @@ exports[`Header rendered correctly 1`] = `
             className="sc-fzozJi cKrXJI"
           >
             <a
-              className="sc-fzoLsD lfNXCQ"
+              className="sc-fzoLsD hqZjvw"
               href="/snippets"
             >
               Snippets
@@ -83,7 +83,7 @@ exports[`Header rendered correctly 1`] = `
             className="sc-fzozJi cKrXJI"
           >
             <a
-              className="sc-fzoLsD lfNXCQ"
+              className="sc-fzoLsD hqZjvw"
               href="/"
             >
               Newsletter
@@ -141,7 +141,7 @@ exports[`Header rendered correctly 1`] = `
                 <circle
                   cx={9}
                   cy={9}
-                  fill="#fff"
+                  fill="var(--color-text)"
                   mask="url(#moon-mask)"
                   r={8}
                 />
@@ -149,7 +149,7 @@ exports[`Header rendered correctly 1`] = `
                   <circle
                     cx={17}
                     cy={9}
-                    fill="var(--color-bg)"
+                    fill="var(--color-text)"
                     r="1.5"
                     style={
                       Object {
@@ -161,7 +161,7 @@ exports[`Header rendered correctly 1`] = `
                   <circle
                     cx={13}
                     cy={15.9282}
-                    fill="var(--color-bg)"
+                    fill="var(--color-text)"
                     r="1.5"
                     style={
                       Object {
@@ -173,7 +173,7 @@ exports[`Header rendered correctly 1`] = `
                   <circle
                     cx={5}
                     cy={15.9282}
-                    fill="var(--color-bg)"
+                    fill="var(--color-text)"
                     r="1.5"
                     style={
                       Object {
@@ -185,7 +185,7 @@ exports[`Header rendered correctly 1`] = `
                   <circle
                     cx={1}
                     cy={9}
-                    fill="var(--color-bg)"
+                    fill="var(--color-text)"
                     r="1.5"
                     style={
                       Object {
@@ -197,7 +197,7 @@ exports[`Header rendered correctly 1`] = `
                   <circle
                     cx={4}
                     cy={2.0717}
-                    fill="var(--color-bg)"
+                    fill="var(--color-text)"
                     r="1.5"
                     style={
                       Object {
@@ -209,7 +209,7 @@ exports[`Header rendered correctly 1`] = `
                   <circle
                     cx={13}
                     cy={2.0717}
-                    fill="var(--color-bg)"
+                    fill="var(--color-text)"
                     r="1.5"
                     style={
                       Object {

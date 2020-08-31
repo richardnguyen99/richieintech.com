@@ -28,18 +28,11 @@ const StyledHeroWrapper = styled.section`
 
   @media screen and (min-width: 768px) {
     height: 100vh;
-
-    background: linear-gradient(
-      90deg,
-      var(--color-bg) 70%,
-      var(--color-text) 30%
-    );
   }
 `;
 
 const StyledContentWrapper = styled.section`
   height: 50vh;
-  background: var(--color-bg);
   @media screen and (min-width: 768px) {
     height: 100vh;
   }
