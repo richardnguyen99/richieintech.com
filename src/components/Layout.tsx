@@ -16,7 +16,11 @@ const Layout: React.FC<PageProps> = ({ children }) => {
   return (
     <>
       <Header />
-      <div>{children}</div>
+      <div
+        style={{ background: "var(--color-bg)", color: "var(--color-text)" }}
+      >
+        {children}
+      </div>
     </>
   );
 };

@@ -17,10 +17,10 @@ const StyledNavbarWrapper = styled.div`
   left: 0;
   right: 0;
 
+  background: none;
   mix-blend-mode: difference;
 
   z-index: 100;
-  opacity: 1;
 `;
 
 const StyledNavbar = styled.header`
@@ -82,14 +82,14 @@ const StyledNavbarNavigationWrapper = styled.div`
 `;
 
 const StyledNavbarNavigationLink = styled.a`
-  color: var(--color-text);
+  color: #cfcbc6;
   font-family: var(--font-sans);
   font-weight: 500;
 
   padding: 8px;
 
   &:hover {
-    color: var(--color-text);
+    color: #cfcbc6;
   }
 `;
 

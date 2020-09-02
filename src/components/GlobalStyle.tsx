@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
     --color-text: ${props =>
-      props.theme.mode === "light" ? `#1c1c1e` : `#fff`};
+      props.theme.mode === "light" ? `#1c1c1e` : `#f5f5f5`};
     --color-bg: ${props => (props.theme.mode === "light" ? `#fff` : `#1c1c1e`)};
     --color-border: ${props =>
       props.theme.mode === "light" ? `#fff` : `#333333`};
@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
   *::after {
     outline: none;
     box-sizing: border-box;
+    cursor: none !important;
   }
 
   *:hover {
@@ -41,14 +42,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    cursor: none !important;
   }
 
 
   body {
     margin: 0;
+    color: var(--color-text);
     background: var(--color-bg);
-    cursor: none !important;
   }
 
 

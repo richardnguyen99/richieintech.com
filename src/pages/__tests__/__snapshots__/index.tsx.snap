@@ -3,16 +3,16 @@
 exports[`Index page matches snapshot 1`] = `
 Array [
   <div
-    className="sc-AxirZ hrOWka"
+    className="sc-AxhCb dnompG"
   >
     <header
-      className="sc-AxiKw djfkqC"
+      className="sc-AxhUy OaBvz"
     >
       <div
-        className="sc-AxhUy byBNkN"
+        className="sc-AxheI dMmxDl"
       >
         <a
-          className="sc-AxhCb cTZJZN"
+          className="sc-AxgMl kfMgJa"
           href="/"
         >
           <svg
@@ -23,7 +23,7 @@ Array [
             width={50}
           >
             <rect
-              fill="#fff"
+              fill="var(--color-bg)"
               height={140}
               rx={23}
               transform="rotate(-45 0 98.995)"
@@ -33,7 +33,7 @@ Array [
             <rect
               height={104.716}
               rx={14.5}
-              stroke="#1c1c1e"
+              stroke="var(--color-text)"
               strokeWidth={7}
               transform="rotate(-45 25.452 99.498)"
               width={104.716}
@@ -42,21 +42,21 @@ Array [
             />
             <path
               d="M78.176 117.776l4.928-.64V79.76l-4.672-.896v-4.416h9.856c.81 0 1.685-.021 2.624-.064a61.142 61.142 0 002.24-.128c2.304-.17 4.267-.256 5.888-.256 4.565 0 8.192.448 10.88 1.344 2.688.853 4.629 2.219 5.824 4.096 1.237 1.835 1.856 4.267 1.856 7.296 0 2.901-.768 5.61-2.304 8.128-1.536 2.517-3.797 4.245-6.784 5.184 1.963.725 3.605 2.091 4.928 4.096 1.365 1.963 2.773 4.48 4.224 7.552.853 1.792 1.536 3.136 2.048 4.032.512.853 1.045 1.344 1.6 1.472l1.856.576V122h-12.16c-.64 0-1.301-.683-1.984-2.048s-1.557-3.499-2.624-6.4c-1.323-3.541-2.475-6.272-3.456-8.192-.939-1.963-1.984-3.157-3.136-3.584h-5.76v15.36l5.696.64V122H78.176v-4.224zm20.8-20.16c2.219 0 3.947-.853 5.184-2.56 1.237-1.75 1.856-4.373 1.856-7.872 0-3.072-.619-5.312-1.856-6.72-1.195-1.45-3.221-2.176-6.08-2.176-1.536 0-2.88.107-4.032.32v18.816c.555.128 1.472.192 2.752.192h2.176z"
-              fill="#1c1c1e"
+              fill="var(--color-text)"
             />
           </svg>
         </a>
         <ul
-          className="sc-AxheI sc-Axmtr iyaHYc"
+          className="sc-AxmLO sc-fzozJi gdovsk"
         >
           <li
-            className="sc-AxmLO rzArC"
+            className="sc-fzoLsD juCxMN"
           >
             <div
-              className="sc-fzozJi cKrXJI"
+              className="sc-fzpans kLztrW"
             >
               <a
-                className="sc-fzoLsD hqZjvw"
+                className="sc-fzplWN cDiZyl"
                 href="/post"
               >
                 Posts
@@ -64,13 +64,13 @@ Array [
             </div>
           </li>
           <li
-            className="sc-AxmLO rzArC"
+            className="sc-fzoLsD juCxMN"
           >
             <div
-              className="sc-fzozJi cKrXJI"
+              className="sc-fzpans kLztrW"
             >
               <a
-                className="sc-fzoLsD hqZjvw"
+                className="sc-fzplWN cDiZyl"
                 href="/snippets"
               >
                 Snippets
@@ -78,13 +78,13 @@ Array [
             </div>
           </li>
           <li
-            className="sc-AxmLO rzArC"
+            className="sc-fzoLsD juCxMN"
           >
             <div
-              className="sc-fzozJi cKrXJI"
+              className="sc-fzpans kLztrW"
             >
               <a
-                className="sc-fzoLsD hqZjvw"
+                className="sc-fzplWN cDiZyl"
                 href="/"
               >
                 Newsletter
@@ -94,20 +94,20 @@ Array [
         </ul>
       </div>
       <div
-        className="sc-AxgMl eoBxKd"
+        className="sc-Axmtr fXHeCE"
       >
         <ul
-          className="sc-AxheI iHBBLX"
+          className="sc-AxmLO eUduLR"
           id="right"
         >
           <li
-            className="sc-AxmLO rzArC"
+            className="sc-fzoLsD juCxMN"
           >
             <div
-              className="sc-fzozJi cKrXJI"
+              className="sc-fzpans kLztrW"
             >
               <button
-                className="sc-fzpans kZRnhV"
+                className="sc-fznyAO dkoJqo"
                 onClick={[Function]}
               >
                 <svg
@@ -142,7 +142,7 @@ Array [
                   <circle
                     cx={9}
                     cy={9}
-                    fill="var(--color-text)"
+                    fill="#cfcbc6"
                     mask="url(#moon-mask)"
                     r={8}
                   />
@@ -150,7 +150,7 @@ Array [
                     <circle
                       cx={17}
                       cy={9}
-                      fill="var(--color-text)"
+                      fill="#cfcbc6"
                       r="1.5"
                       style={
                         Object {
@@ -162,7 +162,7 @@ Array [
                     <circle
                       cx={13}
                       cy={15.9282}
-                      fill="var(--color-text)"
+                      fill="#cfcbc6"
                       r="1.5"
                       style={
                         Object {
@@ -174,7 +174,7 @@ Array [
                     <circle
                       cx={5}
                       cy={15.9282}
-                      fill="var(--color-text)"
+                      fill="#cfcbc6"
                       r="1.5"
                       style={
                         Object {
@@ -186,7 +186,7 @@ Array [
                     <circle
                       cx={1}
                       cy={9}
-                      fill="var(--color-text)"
+                      fill="#cfcbc6"
                       r="1.5"
                       style={
                         Object {
@@ -198,7 +198,7 @@ Array [
                     <circle
                       cx={4}
                       cy={2.0717}
-                      fill="var(--color-text)"
+                      fill="#cfcbc6"
                       r="1.5"
                       style={
                         Object {
@@ -210,7 +210,7 @@ Array [
                     <circle
                       cx={13}
                       cy={2.0717}
-                      fill="var(--color-text)"
+                      fill="#cfcbc6"
                       r="1.5"
                       style={
                         Object {
@@ -228,12 +228,231 @@ Array [
       </div>
     </header>
   </div>,
-  <div>
+  <div
+    style={
+      Object {
+        "background": "var(--color-bg)",
+        "color": "var(--color-text)",
+      }
+    }
+  >
     <section
-      className="sc-fzplWN ijjTUJ"
-    />
+      className="sc-fzoLag hLTNnH"
+    >
+      <div
+        className="sc-fzoXzr cgSbBS"
+      >
+        <div
+          className="sc-fznKkj mRorc"
+        >
+          <div
+            className="sc-fznZeY jAtTOB"
+          >
+            <h1
+              className="sc-fzpjYC btzjvi"
+            >
+              This is Richard
+            </h1>
+            <div
+              className="sc-fznxsB gsepqE"
+            >
+              <div
+                className="sc-fznJRM bOjrpE"
+              >
+                <span>
+                  01
+                </span>
+                <span />
+                <span>
+                  03
+                </span>
+              </div>
+              <p>
+                I write this website as my digital notebook to store what I've learned about programming.
+              </p>
+              <div
+                className="sc-fznWqX clRocp"
+                onMouseLeave={[Function]}
+                onMouseOver={[Function]}
+              >
+                KNOW MORE
+                <div
+                  className="sc-AxirZ gpWHsK"
+                >
+                  <svg
+                    className="sc-AxiKw jZqpjT"
+                    fill="none"
+                    height="12"
+                    viewBox="0 0 36 12"
+                    width="36"
+                  >
+                    <path
+                      d="M0.75 6H11.25 M6 0.75L11.25 6L6 11.25"
+                      stroke="var(--color-text)"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeOpacity={1}
+                      style={
+                        Object {
+                          "opacity": 0,
+                          "transition": "opacity 125ms ease 0s",
+                        }
+                      }
+                    />
+                    <path
+                      d="M15 10L19.5 5.5L15 1"
+                      stroke="var(--color-text)"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeOpacity={1}
+                      style={
+                        Object {
+                          "opacity": 0,
+                          "transition": "opacity 125ms ease 0s",
+                        }
+                      }
+                    />
+                    <path
+                      d="M23 10L27.5 5.5L23 1"
+                      stroke="var(--color-text)"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeOpacity={0.66}
+                      style={
+                        Object {
+                          "opacity": 0,
+                          "transition": "opacity 125ms ease 0s",
+                        }
+                      }
+                    />
+                    <path
+                      d="M31 10L35.5 5.5L31 1"
+                      stroke="var(--color-text)"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeOpacity={0.35}
+                      style={
+                        Object {
+                          "opacity": 0,
+                          "transition": "opacity 125ms ease 0s",
+                        }
+                      }
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="sc-fznZeY jhXGlp"
+            style={
+              Object {
+                "marginLeft": "auto",
+              }
+            }
+          >
+            <div
+              className="sc-fzqARJ hBVZfA"
+            >
+              <div
+                className="sc-fzoyAV hYGizN"
+                height={0}
+              >
+                <div
+                  className=" gatsby-image-wrapper"
+                  style={
+                    Object {
+                      "maxHeight": null,
+                      "maxWidth": null,
+                      "overflow": "hidden",
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    aria-hidden={true}
+                    style={
+                      Object {
+                        "paddingBottom": "50%",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                  <img
+                    alt=""
+                    aria-hidden={true}
+                    src="string_of_base64"
+                    style={
+                      Object {
+                        "height": "100%",
+                        "left": 0,
+                        "objectFit": "cover",
+                        "objectPosition": "center",
+                        "opacity": 1,
+                        "position": "absolute",
+                        "top": 0,
+                        "transitionDelay": "500ms",
+                        "width": "100%",
+                      }
+                    }
+                  />
+                  <picture>
+                    <source
+                      sizes="(max-width: 600px) 100vw, 600px"
+                      srcSet="some srcSetWebp"
+                      type="image/webp"
+                    />
+                    <source
+                      sizes="(max-width: 600px) 100vw, 600px"
+                      srcSet="some srcSet"
+                    />
+                    <img
+                      alt=""
+                      loading="lazy"
+                      onLoad={[Function]}
+                      sizes="(max-width: 600px) 100vw, 600px"
+                      src="test_image.jpg"
+                      srcSet="some srcSet"
+                      style={
+                        Object {
+                          "height": "100%",
+                          "left": 0,
+                          "objectFit": "cover",
+                          "objectPosition": "center",
+                          "opacity": 0,
+                          "position": "absolute",
+                          "top": 0,
+                          "transition": "opacity 500ms",
+                          "width": "100%",
+                        }
+                      }
+                    />
+                  </picture>
+                  <noscript
+                    dangerouslySetInnerHTML={
+                      Object {
+                        "__html": "<picture><source type='image/webp' srcset=\\"some srcSetWebp\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><source srcset=\\"some srcSet\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><img loading=\\"lazy\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" srcset=\\"some srcSet\\" src=\\"test_image.jpg\\" alt=\\"\\" style=\\"position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+                      }
+                    }
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-fzqNqU ekqRpB"
+        >
+          <div>
+            <h1>
+              01
+            </h1>
+          </div>
+        </div>
+      </div>
+    </section>
     <section
-      className="sc-fznyAO hLcxov"
+      className="sc-fzoiQi iTgOSQ"
     />
   </div>,
 ]

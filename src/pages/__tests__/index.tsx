@@ -23,6 +23,18 @@ beforeEach(() => {
           twitterUsername: "@richardnguyenmh",
         },
       },
+      placeholderImage: {
+        childImageSharp: {
+          fluid: {
+            aspectRatio: 2,
+            src: `test_image.jpg`,
+            srcSet: `some srcSet`,
+            srcSetWebp: `some srcSetWebp`,
+            sizes: `(max-width: 600px) 100vw, 600px`,
+            base64: `string_of_base64`,
+          },
+        },
+      },
     })
   );
 });
@@ -38,6 +50,18 @@ describe("Index page", () => {
             "Official blog of Richie about techs, programing and coding.",
           siteUrl: "https://www.richieintech.com",
           twitterUsername: "@richardnguyenmh",
+        },
+      },
+      placeholderImage: {
+        childImageSharp: {
+          fluid: {
+            aspectRatio: 2,
+            src: `test_image.jpg`,
+            srcSet: `some srcSet`,
+            srcSetWebp: `some srcSetWebp`,
+            sizes: `(max-width: 600px) 100vw, 600px`,
+            base64: `string_of_base64`,
+          },
         },
       },
     };

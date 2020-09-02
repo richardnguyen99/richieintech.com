@@ -3,27 +3,38 @@
  *
  * @author Richard Nguyen <richard.ng0616@gmail.com>
  */
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+
+const StyledCursorContainer = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  backface-visibility: hidden;
+`;
 
 interface CursorProps {
   hovered: boolean;
 }
 
 const StyledCursor = styled.div<CursorProps>`
-  width: 10px;
-  height: 10px;
-  border: 0.5px solid var(--color-text);
-  border-radius: 100%;
   position: fixed;
-  transform: translate(-50%, -50%) ${props => props.hovered && `scale(2.5)`};
-  pointer-events: none !important;
-  z-index: 999;
+  top: 0;
+  left: 0;
+  z-index: 9999;
   mix-blend-mode: difference;
-  transition: all 150ms ease;
-  transition-property: transform, mix-blend-mode, background-color;
+  width: ${props => (props.hovered ? `20px` : `8px`)};
+  height: ${props => (props.hovered ? `20px` : `8px`)};
+  border-radius: 20px;
+  border: 1px solid #cfcbc6;
+  transform: translate(-50%, -50%);
+  background: ${props => !props.hovered && `#cfcbc6`};
+  pointer-events: none;
 
-  background-color: ${props => !props.hovered && `#fff`};
+  transition: all 200ms ease;
+  transition-property: width, height, background;
 `;
 
 const Cursor: React.FC = () => {

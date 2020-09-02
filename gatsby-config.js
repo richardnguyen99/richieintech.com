@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+const path = require("path");
 
 module.exports = {
   /* Meta tags config */
@@ -18,6 +19,15 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        names: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
