@@ -10,6 +10,3 @@ generates:
       - "typescript-operations"
     config:
       avoidOptionals: true
-  ./graphql.schema.json:
-    plugins:
-      - "introspection"

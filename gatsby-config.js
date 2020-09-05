@@ -21,6 +21,52 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-remark-images`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        remarkPlugins: [require(`remark-capitalize`), require(`remark-emoji`)],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1040,
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: `language-`,
+              inlineCoderMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              escapeEntities: {},
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        names: `posts`,
+        path: path.join(__dirname, `content`, `posts`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        names: `thumbnails`,
+        path: path.join(__dirname, `content`, `thumbnails`),
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
