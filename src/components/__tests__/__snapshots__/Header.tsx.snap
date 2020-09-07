@@ -2,10 +2,10 @@
 
 exports[`Header rendered correctly 1`] = `
 <div
-  className="sc-AxhCb dnompG"
+  className="sc-AxhCb bqUvYT"
 >
   <header
-    className="sc-AxhUy OaBvz"
+    className="sc-AxhUy kfXuGD"
   >
     <div
       className="sc-AxheI dMmxDl"
@@ -55,7 +55,7 @@ exports[`Header rendered correctly 1`] = `
             className="sc-fzpans kLztrW"
           >
             <a
-              className="sc-fzplWN cDiZyl"
+              className="sc-fzplWN laeLlV"
               href="/post"
             >
               Posts
@@ -69,7 +69,7 @@ exports[`Header rendered correctly 1`] = `
             className="sc-fzpans kLztrW"
           >
             <a
-              className="sc-fzplWN cDiZyl"
+              className="sc-fzplWN laeLlV"
               href="/snippets"
             >
               Snippets
@@ -83,7 +83,7 @@ exports[`Header rendered correctly 1`] = `
             className="sc-fzpans kLztrW"
           >
             <a
-              className="sc-fzplWN cDiZyl"
+              className="sc-fzplWN laeLlV"
               href="/"
             >
               Newsletter
@@ -106,7 +106,7 @@ exports[`Header rendered correctly 1`] = `
             className="sc-fzpans kLztrW"
           >
             <button
-              className="sc-fznyAO dkoJqo"
+              className="sc-fznyAO gJyGqq"
               onClick={[Function]}
             >
               <svg

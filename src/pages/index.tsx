@@ -186,7 +186,7 @@ const StyledContentWrapper = styled.section`
   ${container()}
 
   position: relative;
-  z-index: 1000;
+  z-index: 999;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto 1fr;
@@ -217,6 +217,8 @@ const postAnimation = keyframes`
 `;
 
 const StyledPost = styled.div`
+  position: relative;
+  background: var(--color-bg-post);
   border-radius: 8px;
   border: 1px solid var(--color-border);
 
@@ -240,19 +242,43 @@ const StyledPost = styled.div`
   }
 
   h6 {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
     font-family: var(--font-sans);
     margin-bottom: 1rem;
   }
 
-  &:hover {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    animation-name: ${postAnimation};
-    animation-duration: 0.25s;
-    border-left: 8px solid var(--color-heading);
+  p {
+    font-size: 14px;
+    font-family: var(--font-sans);
+    margin-bottom: 1rem;
   }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0px;
+    background-color: var(--color-heading);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    transition: all 200ms ease;
+    opacity: 0;
+  }
+
+  &:hover {
+    &::before {
+      width: 8px;
+      opacity: 1;
+    }
+  }
+`;
+
+const StyledTagContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
 `;
 
 const StyledPostContainer = styled.a`
@@ -331,6 +357,9 @@ const Home: React.FC<HomeProps> = ({
                     <h4>{edge.node.frontmatter.title}</h4>
                     <h6>{edge.node.frontmatter.description}</h6>
                     <p>{edge.node.excerpt}</p>
+                    <StyledTagContainer>
+                      <Tags tags={edge.node.frontmatter.tags} />
+                    </StyledTagContainer>
                   </StyledPostContainer>
                 </StyledPost>
               ))}

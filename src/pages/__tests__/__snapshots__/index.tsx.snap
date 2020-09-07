@@ -3,10 +3,10 @@
 exports[`Index page matches snapshot 1`] = `
 Array [
   <div
-    className="sc-AxhCb dnompG"
+    className="sc-AxhCb bqUvYT"
   >
     <header
-      className="sc-AxhUy OaBvz"
+      className="sc-AxhUy kfXuGD"
     >
       <div
         className="sc-AxheI dMmxDl"
@@ -56,7 +56,7 @@ Array [
               className="sc-fzpans kLztrW"
             >
               <a
-                className="sc-fzplWN cDiZyl"
+                className="sc-fzplWN laeLlV"
                 href="/post"
               >
                 Posts
@@ -70,7 +70,7 @@ Array [
               className="sc-fzpans kLztrW"
             >
               <a
-                className="sc-fzplWN cDiZyl"
+                className="sc-fzplWN laeLlV"
                 href="/snippets"
               >
                 Snippets
@@ -84,7 +84,7 @@ Array [
               className="sc-fzpans kLztrW"
             >
               <a
-                className="sc-fzplWN cDiZyl"
+                className="sc-fzplWN laeLlV"
                 href="/"
               >
                 Newsletter
@@ -107,7 +107,7 @@ Array [
               className="sc-fzpans kLztrW"
             >
               <button
-                className="sc-fznyAO dkoJqo"
+                className="sc-fznyAO gJyGqq"
                 onClick={[Function]}
               >
                 <svg
@@ -452,7 +452,7 @@ Array [
       </div>
     </section>
     <section
-      className="sc-fzoNJl jYRoJX"
+      className="sc-fzoNJl cTakfX"
     >
       <div
         className="sc-fzoXWK hQdamJ"
@@ -464,10 +464,10 @@ Array [
         </h3>
         <div>
           <div
-            className="sc-fznxKY eQNEWS"
+            className="sc-fznxKY estpJs"
           >
             <a
-              className="sc-fznMAR hUArgg"
+              className="sc-fznWOq iAKTwX"
               href="/"
             >
               <h4>
@@ -479,12 +479,22 @@ Array [
               <p>
                 Some to read
               </p>
+              <div
+                className="sc-fznMAR iQLWnV"
+              >
+                <a
+                  className="sc-fzoLag kOBOPU"
+                  href="/tags/tags"
+                >
+                  tags
+                </a>
+              </div>
             </a>
           </div>
         </div>
       </div>
       <div
-        className="sc-fznWOq cEmskx"
+        className="sc-fzolEj cioJdi"
       >
         <h3
           className="sc-fzpmMD jnAQeW"
@@ -501,7 +511,7 @@ Array [
         </div>
       </div>
       <div
-        className="sc-fzolEj dmgWTu"
+        className="sc-fzqBkg cifTAZ"
       />
     </section>
   </div>,

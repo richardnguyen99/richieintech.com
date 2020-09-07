@@ -18,20 +18,26 @@ const StyledNavbarWrapper = styled.div`
   left: 0;
   right: 0;
 
-  background: none;
-  mix-blend-mode: difference;
+  background: var(--color-bg);
 
-  z-index: 100;
+  z-index: 1000;
 `;
 
-const StyledNavbar = styled.header`
+interface StyledNavbarProps {
+  scrolled: boolean;
+}
+
+const StyledNavbar = styled.header<StyledNavbarProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   /* Allow navbar align in center */
   ${container()}
-  padding: 3rem 0 0 0;
+  padding: ${props => (props.scrolled ? `3rem 0 0 0` : `0.5rem 0 0 0`)};
+  border-bottom: ${props => !props.scrolled && `1px solid var(--color-border)`};
+
+  transition: all 200ms ease;
 `;
 
 const StyledNavbarBrand = styled(Link)`
@@ -83,14 +89,14 @@ const StyledNavbarNavigationWrapper = styled.div`
 `;
 
 const StyledNavbarNavigationLink = styled(Link)`
-  color: #cfcbc6;
+  color: var(--color-text);
   font-family: var(--font-sans);
   font-weight: 500;
 
   padding: 8px;
 
   &:hover {
-    color: #cfcbc6;
+    color: var(--color-text);
   }
 `;
 
@@ -104,19 +110,15 @@ const StyledNavbarButton = styled.button`
   margin: 0;
   padding: 0;
 
-  opacity: 0.7;
   border: none;
   background: transparent;
-
-  &:hover {
-    opacity: 1;
-  }
 `;
 
 const Header: React.FC = () => {
   const themeContext = useContext(ThemeContext);
 
   const [toggle, setToggle] = useState(false);
+  const [transparent, setTransparent] = useState(true);
 
   const onToggleHandle = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -126,9 +128,30 @@ const Header: React.FC = () => {
     themeContext.toggle();
   };
 
+  const handleScroll = (): void => {
+    const currentHeight =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentHeight > 50) {
+      setTransparent(false);
+    }
+
+    if (currentHeight < 10) {
+      setTransparent(true);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return (): void => {
+      return window.removeEventListener("scroll", handleScroll);
+    };
+  }, [transparent]);
+
   return (
     <StyledNavbarWrapper>
-      <StyledNavbar>
+      <StyledNavbar scrolled={transparent}>
         <StyledLeftNavbarMenu>
           <StyledNavbarBrand to="/">
             <Logo />
