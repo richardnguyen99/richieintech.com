@@ -35,6 +35,10 @@ const ntags = {
     bg: "#663399",
     color: "#ffffff",
   },
+  jest: {
+    bg: "#c21325",
+    color: "#ffffff",
+  },
 };
 
 type Tags = keyof typeof ntags;

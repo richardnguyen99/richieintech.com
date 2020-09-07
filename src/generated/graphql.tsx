@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable camelcase */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 export type Maybe<T> = T;
 export type Exact<T extends { [key: string]: unknown }> = {
@@ -3306,6 +3306,42 @@ export type IndexQueryQuery = { __typename?: "Query" } & {
       }
     >;
   };
+  latest: { __typename?: "MdxConnection" } & {
+    edges: Array<
+      { __typename?: "MdxEdge" } & {
+        node: { __typename?: "Mdx" } & Pick<Mdx, "timeToRead" | "excerpt"> & {
+            fields: Maybe<
+              { __typename?: "MdxFields" } & Pick<MdxFields, "slug">
+            >;
+            frontmatter: Maybe<
+              { __typename?: "MdxFrontmatter" } & Pick<
+                MdxFrontmatter,
+                "title" | "tags" | "description" | "categories" | "date"
+              > & {
+                  thumbnail: Maybe<
+                    { __typename?: "File" } & {
+                      childImageSharp: Maybe<
+                        { __typename?: "ImageSharp" } & {
+                          fluid: Maybe<
+                            {
+                              __typename?: "ImageSharpFluid";
+                            } & GatsbyImageSharpFluidFragment
+                          >;
+                        }
+                      >;
+                    }
+                  >;
+                }
+            >;
+          };
+      }
+    >;
+  };
+};
+
+export type BlogQueryQueryVariables = Exact<{ [key: string]: never }>;
+
+export type BlogQueryQuery = { __typename?: "Query" } & {
   latest: { __typename?: "MdxConnection" } & {
     edges: Array<
       { __typename?: "MdxEdge" } & {
