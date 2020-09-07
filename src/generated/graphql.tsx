@@ -677,9 +677,9 @@ export enum FileFieldsEnum {
   ChildMdxFileAbsolutePath = "childMdx___fileAbsolutePath",
   ChildMdxFrontmatterTitle = "childMdx___frontmatter___title",
   ChildMdxFrontmatterDescription = "childMdx___frontmatter___description",
+  ChildMdxFrontmatterDate = "childMdx___frontmatter___date",
   ChildMdxFrontmatterCategories = "childMdx___frontmatter___categories",
   ChildMdxFrontmatterTags = "childMdx___frontmatter___tags",
-  ChildMdxFrontmatterDate = "childMdx___frontmatter___date",
   ChildMdxFrontmatterThumbnailSourceInstanceName = "childMdx___frontmatter___thumbnail___sourceInstanceName",
   ChildMdxFrontmatterThumbnailAbsolutePath = "childMdx___frontmatter___thumbnail___absolutePath",
   ChildMdxFrontmatterThumbnailRelativePath = "childMdx___frontmatter___thumbnail___relativePath",
@@ -1466,9 +1466,9 @@ export enum MdxFieldsEnum {
   FileAbsolutePath = "fileAbsolutePath",
   FrontmatterTitle = "frontmatter___title",
   FrontmatterDescription = "frontmatter___description",
+  FrontmatterDate = "frontmatter___date",
   FrontmatterCategories = "frontmatter___categories",
   FrontmatterTags = "frontmatter___tags",
-  FrontmatterDate = "frontmatter___date",
   FrontmatterThumbnailSourceInstanceName = "frontmatter___thumbnail___sourceInstanceName",
   FrontmatterThumbnailAbsolutePath = "frontmatter___thumbnail___absolutePath",
   FrontmatterThumbnailRelativePath = "frontmatter___thumbnail___relativePath",
@@ -1661,9 +1661,9 @@ export type MdxFrontmatter = {
   __typename?: "MdxFrontmatter";
   title: Scalars["String"];
   description: Maybe<Scalars["String"]>;
+  date: Maybe<Scalars["Date"]>;
   categories: Maybe<Array<Maybe<Scalars["String"]>>>;
   tags: Maybe<Array<Maybe<Scalars["String"]>>>;
-  date: Maybe<Scalars["Date"]>;
   thumbnail: Maybe<File>;
 };
 
@@ -1677,9 +1677,9 @@ export type MdxFrontmatterDateArgs = {
 export type MdxFrontmatterFilterInput = {
   title: Maybe<StringQueryOperatorInput>;
   description: Maybe<StringQueryOperatorInput>;
+  date: Maybe<DateQueryOperatorInput>;
   categories: Maybe<StringQueryOperatorInput>;
   tags: Maybe<StringQueryOperatorInput>;
-  date: Maybe<DateQueryOperatorInput>;
   thumbnail: Maybe<FileFilterInput>;
 };
 
@@ -2397,10 +2397,12 @@ export type SitePageConnectionGroupArgs = {
 export type SitePageContext = {
   __typename?: "SitePageContext";
   id: Maybe<Scalars["String"]>;
+  tag: Maybe<Scalars["String"]>;
 };
 
 export type SitePageContextFilterInput = {
   id: Maybe<StringQueryOperatorInput>;
+  tag: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2504,6 +2506,7 @@ export enum SitePageFieldsEnum {
   InternalType = "internal___type",
   IsCreatedByStatefulCreatePages = "isCreatedByStatefulCreatePages",
   ContextId = "context___id",
+  ContextTag = "context___tag",
   PluginCreatorId = "pluginCreator___id",
   PluginCreatorParentId = "pluginCreator___parent___id",
   PluginCreatorParentParentId = "pluginCreator___parent___parent___id",
@@ -3213,6 +3216,22 @@ export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = {
   "aspectRatio" | "src" | "srcSet" | "srcWebp" | "srcSetWebp" | "sizes"
 >;
 
+export type AvatarQueryVariables = Exact<{ [key: string]: never }>;
+
+export type AvatarQuery = { __typename?: "Query" } & {
+  placeholderImage: Maybe<
+    { __typename?: "File" } & {
+      childImageSharp: Maybe<
+        { __typename?: "ImageSharp" } & {
+          fluid: Maybe<
+            { __typename?: "ImageSharpFluid" } & GatsbyImageSharpFluidFragment
+          >;
+        }
+      >;
+    }
+  >;
+};
+
 export type PostQueryVariables = Exact<{
   id: Maybe<Scalars["String"]>;
 }>;
@@ -3248,22 +3267,6 @@ export type PostQuery = { __typename?: "Query" } & {
   >;
 };
 
-export type AvatarQueryVariables = Exact<{ [key: string]: never }>;
-
-export type AvatarQuery = { __typename?: "Query" } & {
-  placeholderImage: Maybe<
-    { __typename?: "File" } & {
-      childImageSharp: Maybe<
-        { __typename?: "ImageSharp" } & {
-          fluid: Maybe<
-            { __typename?: "ImageSharpFluid" } & GatsbyImageSharpFluidFragment
-          >;
-        }
-      >;
-    }
-  >;
-};
-
 export type IndexQueryQueryVariables = Exact<{ [key: string]: never }>;
 
 export type IndexQueryQuery = { __typename?: "Query" } & {
@@ -3292,4 +3295,46 @@ export type IndexQueryQuery = { __typename?: "Query" } & {
       >;
     }
   >;
+  allMdx: { __typename?: "MdxConnection" } & {
+    edges: Array<
+      { __typename?: "MdxEdge" } & {
+        node: { __typename?: "Mdx" } & {
+          frontmatter: Maybe<
+            { __typename?: "MdxFrontmatter" } & Pick<MdxFrontmatter, "tags">
+          >;
+        };
+      }
+    >;
+  };
+  latest: { __typename?: "MdxConnection" } & {
+    edges: Array<
+      { __typename?: "MdxEdge" } & {
+        node: { __typename?: "Mdx" } & Pick<Mdx, "timeToRead" | "excerpt"> & {
+            fields: Maybe<
+              { __typename?: "MdxFields" } & Pick<MdxFields, "slug">
+            >;
+            frontmatter: Maybe<
+              { __typename?: "MdxFrontmatter" } & Pick<
+                MdxFrontmatter,
+                "title" | "tags" | "description" | "categories" | "date"
+              > & {
+                  thumbnail: Maybe<
+                    { __typename?: "File" } & {
+                      childImageSharp: Maybe<
+                        { __typename?: "ImageSharp" } & {
+                          fluid: Maybe<
+                            {
+                              __typename?: "ImageSharpFluid";
+                            } & GatsbyImageSharpFluidFragment
+                          >;
+                        }
+                      >;
+                    }
+                  >;
+                }
+            >;
+          };
+      }
+    >;
+  };
 };

@@ -4,6 +4,7 @@
  * @author Richard Nguyen <richard.ng0616@gmail.com>
  */
 import React, { useState, useContext } from "react";
+import { Link } from "gatsby";
 import styled from "styled-components";
 
 import { ThemeContext } from "@context/ThemeContext";
@@ -33,7 +34,7 @@ const StyledNavbar = styled.header`
   padding: 3rem 0 0 0;
 `;
 
-const StyledNavbarBrand = styled.a`
+const StyledNavbarBrand = styled(Link)`
   display: flex;
 
   padding: 0px;
@@ -81,7 +82,7 @@ const StyledNavbarNavigationWrapper = styled.div`
   display: flex;
 `;
 
-const StyledNavbarNavigationLink = styled.a`
+const StyledNavbarNavigationLink = styled(Link)`
   color: #cfcbc6;
   font-family: var(--font-sans);
   font-weight: 500;
@@ -129,27 +130,27 @@ const Header: React.FC = () => {
     <StyledNavbarWrapper>
       <StyledNavbar>
         <StyledLeftNavbarMenu>
-          <StyledNavbarBrand href="/">
+          <StyledNavbarBrand to="/">
             <Logo />
           </StyledNavbarBrand>
           <StyledLeftNavbarNavigation>
             <StyledNavbarNavigationItem>
               <StyledNavbarNavigationWrapper>
-                <StyledNavbarNavigationLink href="/post">
+                <StyledNavbarNavigationLink to="/post">
                   Posts
                 </StyledNavbarNavigationLink>
               </StyledNavbarNavigationWrapper>
             </StyledNavbarNavigationItem>
             <StyledNavbarNavigationItem>
               <StyledNavbarNavigationWrapper>
-                <StyledNavbarNavigationLink href="/snippets">
+                <StyledNavbarNavigationLink to="/snippets">
                   Snippets
                 </StyledNavbarNavigationLink>
               </StyledNavbarNavigationWrapper>
             </StyledNavbarNavigationItem>
             <StyledNavbarNavigationItem>
               <StyledNavbarNavigationWrapper>
-                <StyledNavbarNavigationLink href="/">
+                <StyledNavbarNavigationLink to="/">
                   Newsletter
                 </StyledNavbarNavigationLink>
               </StyledNavbarNavigationWrapper>

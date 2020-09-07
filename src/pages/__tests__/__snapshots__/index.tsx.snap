@@ -237,10 +237,10 @@ Array [
     }
   >
     <section
-      className="sc-fzoLag hLTNnH"
+      className="sc-fzpjYC lezYzC"
     >
       <div
-        className="sc-fzoXzr cgSbBS"
+        className="sc-fznxsB dkpEhu"
       >
         <div
           className="sc-fznKkj mRorc"
@@ -249,15 +249,15 @@ Array [
             className="sc-fznZeY jAtTOB"
           >
             <h1
-              className="sc-fzpjYC btzjvi"
+              className="sc-fznJRM ggdVax"
             >
               This is Richard
             </h1>
             <div
-              className="sc-fznxsB gsepqE"
+              className="sc-fznWqX hCeKSj"
             >
               <div
-                className="sc-fznJRM bOjrpE"
+                className="sc-fzoiQi ptzLR"
               >
                 <span>
                   01
@@ -271,7 +271,7 @@ Array [
                 I write this website as my digital notebook to store what I've learned about programming.
               </p>
               <div
-                className="sc-fznWqX clRocp"
+                className="sc-fzqARJ gVaYiV"
                 onMouseLeave={[Function]}
                 onMouseOver={[Function]}
               >
@@ -352,7 +352,7 @@ Array [
             }
           >
             <div
-              className="sc-fzqARJ hBVZfA"
+              className="sc-fzqNqU fwPrQL"
             >
               <div
                 className="sc-fzoyAV hYGizN"
@@ -441,7 +441,7 @@ Array [
           </div>
         </div>
         <div
-          className="sc-fzqNqU ekqRpB"
+          className="sc-fzoyTs jgocZH"
         >
           <div>
             <h1>
@@ -452,8 +452,58 @@ Array [
       </div>
     </section>
     <section
-      className="sc-fzoiQi iTgOSQ"
-    />
+      className="sc-fzoNJl jYRoJX"
+    >
+      <div
+        className="sc-fzoXWK hQdamJ"
+      >
+        <h3
+          className="sc-fzpmMD jnAQeW"
+        >
+          Latest Posts
+        </h3>
+        <div>
+          <div
+            className="sc-fznxKY eQNEWS"
+          >
+            <a
+              className="sc-fznMAR hUArgg"
+              href="/"
+            >
+              <h4>
+                Default Title
+              </h4>
+              <h6>
+                Default description
+              </h6>
+              <p>
+                Some to read
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-fznWOq cEmskx"
+      >
+        <h3
+          className="sc-fzpmMD jnAQeW"
+        >
+          Tags
+        </h3>
+        <div>
+          <a
+            className="sc-fzoLag kOBOPU"
+            href="/tags/tags"
+          >
+            tags
+          </a>
+        </div>
+      </div>
+      <div
+        className="sc-fzolEj dmgWTu"
+      />
+    </section>
   </div>,
 ]
 `;

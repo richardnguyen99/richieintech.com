@@ -6,5 +6,16 @@ import Cursor from "./Cursor";
 import GlobalStyle from "./GlobalStyle";
 import Container from "./Container";
 import Parallax from "./Parallax";
+import Tags from "./Tags";
 
-export { Layout, SEO, Row, Col, Cursor, GlobalStyle, Container, Parallax };
+export {
+  Layout,
+  SEO,
+  Row,
+  Col,
+  Cursor,
+  GlobalStyle,
+  Container,
+  Parallax,
+  Tags,
+};

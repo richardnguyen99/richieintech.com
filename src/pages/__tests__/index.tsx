@@ -35,6 +35,47 @@ beforeEach(() => {
           },
         },
       },
+
+      latest: {
+        edges: {
+          node: {
+            fields: {
+              slug: "/",
+            },
+            frontmatter: {
+              title: "Default Title",
+              tags: ["tags"],
+              description: "Default description",
+              categories: ["blogs"],
+              date: "2020-09-06",
+              thumbnail: {
+                childImageSharp: {
+                  fluid: {
+                    aspectRatio: 2,
+                    src: `test_image.jpg`,
+                    srcSet: `some srcSet`,
+                    srcSetWebp: `some srcSetWebp`,
+                    sizes: `(max-width: 600px) 100vw, 600px`,
+                    base64: `string_of_base64`,
+                  },
+                },
+              },
+            },
+            excerpt: undefined,
+            timeToRead: undefined,
+          },
+        },
+      },
+
+      allMdx: {
+        edges: {
+          node: {
+            frontmatter: {
+              tags: ["blogs"],
+            },
+          },
+        },
+      },
     })
   );
 });
@@ -63,6 +104,50 @@ describe("Index page", () => {
             base64: `string_of_base64`,
           },
         },
+      },
+      latest: {
+        edges: [
+          {
+            node: {
+              fields: {
+                slug: "/",
+              },
+              frontmatter: {
+                title: "Default Title",
+                tags: ["tags"],
+                description: "Default description",
+                categories: ["blogs"],
+                date: "2020-09-06",
+                thumbnail: {
+                  childImageSharp: {
+                    fluid: {
+                      aspectRatio: 2,
+                      src: `test_image.jpg`,
+                      srcSet: `some srcSet`,
+                      srcSetWebp: `some srcSetWebp`,
+                      sizes: `(max-width: 600px) 100vw, 600px`,
+                      base64: `string_of_base64`,
+                    },
+                  },
+                },
+              },
+              excerpt: `Some to read`,
+              timeToRead: 1,
+            },
+          },
+        ],
+      },
+
+      allMdx: {
+        edges: [
+          {
+            node: {
+              frontmatter: {
+                tags: ["tags"],
+              },
+            },
+          },
+        ],
       },
     };
     const tree = renderer.create(<Index data={data} />).toJSON();

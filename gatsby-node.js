@@ -29,6 +29,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             id
+            frontmatter {
+              title
+              tags
+            }
             fields {
               slug
             }
@@ -43,12 +47,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const posts = result.data.allMdx.edges;
+  const tags = new Set();
 
   posts.forEach(({ node }, index) => {
+    node.frontmatter.tags.forEach(tag => {
+      tags.add(tag);
+    });
+
     createPage({
       path: node.fields.slug,
-      component: path.resolve("./src/components/PostTemplate.tsx"),
+      component: path.resolve("./src/components/templates/PostTemplate.tsx"),
       context: { id: node.id },
+    });
+  });
+
+  Array.from(tags).forEach(tag => {
+    createPage({
+      path: `/tags/${tag}`,
+      component: path.resolve("./src/components/templates/TagTemplate.tsx"),
+      context: {
+        tag,
+      },
     });
   });
 };

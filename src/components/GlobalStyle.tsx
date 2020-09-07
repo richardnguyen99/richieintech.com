@@ -16,7 +16,13 @@ const GlobalStyle = createGlobalStyle`
       props.theme.mode === "light" ? `#1c1c1e` : `#f5f5f5`};
     --color-bg: ${props => (props.theme.mode === "light" ? `#fff` : `#1c1c1e`)};
     --color-border: ${props =>
-      props.theme.mode === "light" ? `#fff` : `#333333`};
+      props.theme.mode === "light"
+        ? `rgba(28, 28, 28, 0.2)`
+        : `rgba(245, 245, 245, 0.2)`};
+    --color-border-onHover: ${props =>
+      props.theme.mode === "light"
+        ? `rgba(28, 28, 28, 0.6)`
+        : `rgba(245, 245, 245, 0.6)`};
     --color-heading: #ff5a5f;
     --font-serif: "Merriweather", serif;
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

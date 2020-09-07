@@ -4,6 +4,7 @@
  * @author Richard Nguyen <richard.ng0616@gmail.com>
  */
 import React, { useState, useEffect } from "react";
+import { useLocation } from "@reach/router";
 import styled from "styled-components";
 
 const StyledCursorContainer = styled.div`
@@ -38,14 +39,17 @@ const StyledCursor = styled.div<CursorProps>`
 `;
 
 const Cursor: React.FC = () => {
+  const location = useLocation();
   const [pos, setPos] = useState({ top: 0, left: 0 });
   const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   const onMouseMove = (e: MouseEvent) => {
     setPos({ top: e.clientY, left: e.clientX });
   };
 
   useEffect(() => {
+    setHovered(false);
     document.addEventListener("mousemove", onMouseMove);
     document.querySelectorAll("a")?.forEach(element => {
       element.addEventListener("mouseover", () => setHovered(true));
@@ -54,8 +58,13 @@ const Cursor: React.FC = () => {
 
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
+
+      document.querySelectorAll("a")?.forEach(element => {
+        element.removeEventListener("mouseover", () => setHovered(true));
+        element.removeEventListener("mouseout", () => setHovered(false));
+      });
     };
-  }, []);
+  }, [location]);
 
   return (
     <StyledCursor style={{ top: pos.top, left: pos.left }} hovered={hovered} />
