@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index page matches snapshot 1`] = `
+exports[`Post page matches snapshot 1`] = `
 Array [
   <div
     className="sc-AxhCb bqUvYT"
@@ -252,6 +252,22 @@ Array [
     <section
       className="sc-fznJRM eubvmk"
     >
+      <div
+        className="sc-fzoNJl MAkJM"
+      >
+        <span
+          className="sc-fzoXWK fMwCSm"
+        >
+          <input
+            className="sc-fzpmMD llQpjO"
+            id="search"
+            onChange={[Function]}
+            placeholder="Search posts"
+            type="search"
+            value=""
+          />
+        </span>
+      </div>
       <div
         className="sc-fznWqX cRiCys"
       >

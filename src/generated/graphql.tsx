@@ -1395,6 +1395,176 @@ export type JsonQueryOperatorInput = {
   glob: Maybe<Scalars["JSON"]>;
 };
 
+export type LocalSearchPages = Node & {
+  __typename?: "LocalSearchPages";
+  /** The name of the index. */
+  name: Scalars["String"];
+  /** The search engine used to create the index. */
+  engine: Scalars["String"];
+  /** The search index created using the selected engine. */
+  index: Scalars["String"];
+  /** A JSON object used to map search results to their data. */
+  store: Scalars["JSON"];
+  /** Save the index to the site's static directory and return a public URL to it. */
+  publicIndexURL: Scalars["String"];
+  /** Save the store to the site's static directory and return a public URL to it. */
+  publicStoreURL: Scalars["String"];
+  id: Scalars["ID"];
+  parent: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
+export type LocalSearchPagesConnection = {
+  __typename?: "LocalSearchPagesConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<LocalSearchPagesEdge>;
+  nodes: Array<LocalSearchPages>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars["String"]>;
+  group: Array<LocalSearchPagesGroupConnection>;
+};
+
+export type LocalSearchPagesConnectionDistinctArgs = {
+  field: LocalSearchPagesFieldsEnum;
+};
+
+export type LocalSearchPagesConnectionGroupArgs = {
+  skip: Maybe<Scalars["Int"]>;
+  limit: Maybe<Scalars["Int"]>;
+  field: LocalSearchPagesFieldsEnum;
+};
+
+export type LocalSearchPagesEdge = {
+  __typename?: "LocalSearchPagesEdge";
+  next: Maybe<LocalSearchPages>;
+  node: LocalSearchPages;
+  previous: Maybe<LocalSearchPages>;
+};
+
+export enum LocalSearchPagesFieldsEnum {
+  Name = "name",
+  Engine = "engine",
+  Index = "index",
+  Store = "store",
+  PublicIndexUrl = "publicIndexURL",
+  PublicStoreUrl = "publicStoreURL",
+  Id = "id",
+  ParentId = "parent___id",
+  ParentParentId = "parent___parent___id",
+  ParentParentParentId = "parent___parent___parent___id",
+  ParentParentParentChildren = "parent___parent___parent___children",
+  ParentParentChildren = "parent___parent___children",
+  ParentParentChildrenId = "parent___parent___children___id",
+  ParentParentChildrenChildren = "parent___parent___children___children",
+  ParentParentInternalContent = "parent___parent___internal___content",
+  ParentParentInternalContentDigest = "parent___parent___internal___contentDigest",
+  ParentParentInternalDescription = "parent___parent___internal___description",
+  ParentParentInternalFieldOwners = "parent___parent___internal___fieldOwners",
+  ParentParentInternalIgnoreType = "parent___parent___internal___ignoreType",
+  ParentParentInternalMediaType = "parent___parent___internal___mediaType",
+  ParentParentInternalOwner = "parent___parent___internal___owner",
+  ParentParentInternalType = "parent___parent___internal___type",
+  ParentChildren = "parent___children",
+  ParentChildrenId = "parent___children___id",
+  ParentChildrenParentId = "parent___children___parent___id",
+  ParentChildrenParentChildren = "parent___children___parent___children",
+  ParentChildrenChildren = "parent___children___children",
+  ParentChildrenChildrenId = "parent___children___children___id",
+  ParentChildrenChildrenChildren = "parent___children___children___children",
+  ParentChildrenInternalContent = "parent___children___internal___content",
+  ParentChildrenInternalContentDigest = "parent___children___internal___contentDigest",
+  ParentChildrenInternalDescription = "parent___children___internal___description",
+  ParentChildrenInternalFieldOwners = "parent___children___internal___fieldOwners",
+  ParentChildrenInternalIgnoreType = "parent___children___internal___ignoreType",
+  ParentChildrenInternalMediaType = "parent___children___internal___mediaType",
+  ParentChildrenInternalOwner = "parent___children___internal___owner",
+  ParentChildrenInternalType = "parent___children___internal___type",
+  ParentInternalContent = "parent___internal___content",
+  ParentInternalContentDigest = "parent___internal___contentDigest",
+  ParentInternalDescription = "parent___internal___description",
+  ParentInternalFieldOwners = "parent___internal___fieldOwners",
+  ParentInternalIgnoreType = "parent___internal___ignoreType",
+  ParentInternalMediaType = "parent___internal___mediaType",
+  ParentInternalOwner = "parent___internal___owner",
+  ParentInternalType = "parent___internal___type",
+  Children = "children",
+  ChildrenId = "children___id",
+  ChildrenParentId = "children___parent___id",
+  ChildrenParentParentId = "children___parent___parent___id",
+  ChildrenParentParentChildren = "children___parent___parent___children",
+  ChildrenParentChildren = "children___parent___children",
+  ChildrenParentChildrenId = "children___parent___children___id",
+  ChildrenParentChildrenChildren = "children___parent___children___children",
+  ChildrenParentInternalContent = "children___parent___internal___content",
+  ChildrenParentInternalContentDigest = "children___parent___internal___contentDigest",
+  ChildrenParentInternalDescription = "children___parent___internal___description",
+  ChildrenParentInternalFieldOwners = "children___parent___internal___fieldOwners",
+  ChildrenParentInternalIgnoreType = "children___parent___internal___ignoreType",
+  ChildrenParentInternalMediaType = "children___parent___internal___mediaType",
+  ChildrenParentInternalOwner = "children___parent___internal___owner",
+  ChildrenParentInternalType = "children___parent___internal___type",
+  ChildrenChildren = "children___children",
+  ChildrenChildrenId = "children___children___id",
+  ChildrenChildrenParentId = "children___children___parent___id",
+  ChildrenChildrenParentChildren = "children___children___parent___children",
+  ChildrenChildrenChildren = "children___children___children",
+  ChildrenChildrenChildrenId = "children___children___children___id",
+  ChildrenChildrenChildrenChildren = "children___children___children___children",
+  ChildrenChildrenInternalContent = "children___children___internal___content",
+  ChildrenChildrenInternalContentDigest = "children___children___internal___contentDigest",
+  ChildrenChildrenInternalDescription = "children___children___internal___description",
+  ChildrenChildrenInternalFieldOwners = "children___children___internal___fieldOwners",
+  ChildrenChildrenInternalIgnoreType = "children___children___internal___ignoreType",
+  ChildrenChildrenInternalMediaType = "children___children___internal___mediaType",
+  ChildrenChildrenInternalOwner = "children___children___internal___owner",
+  ChildrenChildrenInternalType = "children___children___internal___type",
+  ChildrenInternalContent = "children___internal___content",
+  ChildrenInternalContentDigest = "children___internal___contentDigest",
+  ChildrenInternalDescription = "children___internal___description",
+  ChildrenInternalFieldOwners = "children___internal___fieldOwners",
+  ChildrenInternalIgnoreType = "children___internal___ignoreType",
+  ChildrenInternalMediaType = "children___internal___mediaType",
+  ChildrenInternalOwner = "children___internal___owner",
+  ChildrenInternalType = "children___internal___type",
+  InternalContent = "internal___content",
+  InternalContentDigest = "internal___contentDigest",
+  InternalDescription = "internal___description",
+  InternalFieldOwners = "internal___fieldOwners",
+  InternalIgnoreType = "internal___ignoreType",
+  InternalMediaType = "internal___mediaType",
+  InternalOwner = "internal___owner",
+  InternalType = "internal___type",
+}
+
+export type LocalSearchPagesFilterInput = {
+  name: Maybe<StringQueryOperatorInput>;
+  engine: Maybe<StringQueryOperatorInput>;
+  index: Maybe<StringQueryOperatorInput>;
+  store: Maybe<JsonQueryOperatorInput>;
+  publicIndexURL: Maybe<StringQueryOperatorInput>;
+  publicStoreURL: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+};
+
+export type LocalSearchPagesGroupConnection = {
+  __typename?: "LocalSearchPagesGroupConnection";
+  totalCount: Scalars["Int"];
+  edges: Array<LocalSearchPagesEdge>;
+  nodes: Array<LocalSearchPages>;
+  pageInfo: PageInfo;
+  field: Scalars["String"];
+  fieldValue: Maybe<Scalars["String"]>;
+};
+
+export type LocalSearchPagesSortInput = {
+  fields: Maybe<Array<Maybe<LocalSearchPagesFieldsEnum>>>;
+  order: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type Mdx = Node & {
   __typename?: "Mdx";
   rawBody: Scalars["String"];
@@ -1789,6 +1959,8 @@ export type Query = {
   allSite: SiteConnection;
   imageSharp: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
+  localSearchPages: Maybe<LocalSearchPages>;
+  allLocalSearchPages: LocalSearchPagesConnection;
   mdx: Maybe<Mdx>;
   allMdx: MdxConnection;
   siteBuildMetadata: Maybe<SiteBuildMetadata>;
@@ -1954,6 +2126,26 @@ export type QueryImageSharpArgs = {
 export type QueryAllImageSharpArgs = {
   filter: Maybe<ImageSharpFilterInput>;
   sort: Maybe<ImageSharpSortInput>;
+  skip: Maybe<Scalars["Int"]>;
+  limit: Maybe<Scalars["Int"]>;
+};
+
+export type QueryLocalSearchPagesArgs = {
+  name: Maybe<StringQueryOperatorInput>;
+  engine: Maybe<StringQueryOperatorInput>;
+  index: Maybe<StringQueryOperatorInput>;
+  store: Maybe<JsonQueryOperatorInput>;
+  publicIndexURL: Maybe<StringQueryOperatorInput>;
+  publicStoreURL: Maybe<StringQueryOperatorInput>;
+  id: Maybe<StringQueryOperatorInput>;
+  parent: Maybe<NodeFilterInput>;
+  children: Maybe<NodeFilterListInput>;
+  internal: Maybe<InternalFilterInput>;
+};
+
+export type QueryAllLocalSearchPagesArgs = {
+  filter: Maybe<LocalSearchPagesFilterInput>;
+  sort: Maybe<LocalSearchPagesSortInput>;
   skip: Maybe<Scalars["Int"]>;
   limit: Maybe<Scalars["Int"]>;
 };
@@ -2548,12 +2740,18 @@ export enum SitePageFieldsEnum {
   PluginCreatorResolve = "pluginCreator___resolve",
   PluginCreatorName = "pluginCreator___name",
   PluginCreatorVersion = "pluginCreator___version",
+  PluginCreatorPluginOptionsName = "pluginCreator___pluginOptions___name",
+  PluginCreatorPluginOptionsEngine = "pluginCreator___pluginOptions___engine",
+  PluginCreatorPluginOptionsEngineOptions = "pluginCreator___pluginOptions___engineOptions",
+  PluginCreatorPluginOptionsQuery = "pluginCreator___pluginOptions___query",
+  PluginCreatorPluginOptionsRef = "pluginCreator___pluginOptions___ref",
+  PluginCreatorPluginOptionsIndex = "pluginCreator___pluginOptions___index",
+  PluginCreatorPluginOptionsStore = "pluginCreator___pluginOptions___store",
   PluginCreatorPluginOptionsExtensions = "pluginCreator___pluginOptions___extensions",
   PluginCreatorPluginOptionsGatsbyRemarkPlugins = "pluginCreator___pluginOptions___gatsbyRemarkPlugins",
   PluginCreatorPluginOptionsGatsbyRemarkPluginsResolve = "pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve",
   PluginCreatorPluginOptionsNames = "pluginCreator___pluginOptions___names",
   PluginCreatorPluginOptionsPath = "pluginCreator___pluginOptions___path",
-  PluginCreatorPluginOptionsName = "pluginCreator___pluginOptions___name",
   PluginCreatorPluginOptionsShortName = "pluginCreator___pluginOptions___short_name",
   PluginCreatorPluginOptionsStartUrl = "pluginCreator___pluginOptions___start_url",
   PluginCreatorPluginOptionsBackgroundColor = "pluginCreator___pluginOptions___background_color",
@@ -2757,6 +2955,13 @@ export enum SitePluginFieldsEnum {
   Resolve = "resolve",
   Name = "name",
   Version = "version",
+  PluginOptionsName = "pluginOptions___name",
+  PluginOptionsEngine = "pluginOptions___engine",
+  PluginOptionsEngineOptions = "pluginOptions___engineOptions",
+  PluginOptionsQuery = "pluginOptions___query",
+  PluginOptionsRef = "pluginOptions___ref",
+  PluginOptionsIndex = "pluginOptions___index",
+  PluginOptionsStore = "pluginOptions___store",
   PluginOptionsExtensions = "pluginOptions___extensions",
   PluginOptionsGatsbyRemarkPlugins = "pluginOptions___gatsbyRemarkPlugins",
   PluginOptionsGatsbyRemarkPluginsResolve = "pluginOptions___gatsbyRemarkPlugins___resolve",
@@ -2766,7 +2971,6 @@ export enum SitePluginFieldsEnum {
   PluginOptionsGatsbyRemarkPluginsOptionsNoInlineHighlight = "pluginOptions___gatsbyRemarkPlugins___options___noInlineHighlight",
   PluginOptionsNames = "pluginOptions___names",
   PluginOptionsPath = "pluginOptions___path",
-  PluginOptionsName = "pluginOptions___name",
   PluginOptionsShortName = "pluginOptions___short_name",
   PluginOptionsStartUrl = "pluginOptions___start_url",
   PluginOptionsBackgroundColor = "pluginOptions___background_color",
@@ -2902,13 +3106,19 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
   __typename?: "SitePluginPluginOptions";
+  name: Maybe<Scalars["String"]>;
+  engine: Maybe<Scalars["String"]>;
+  engineOptions: Maybe<Scalars["String"]>;
+  query: Maybe<Scalars["String"]>;
+  ref: Maybe<Scalars["String"]>;
+  index: Maybe<Array<Maybe<Scalars["String"]>>>;
+  store: Maybe<Array<Maybe<Scalars["String"]>>>;
   extensions: Maybe<Array<Maybe<Scalars["String"]>>>;
   gatsbyRemarkPlugins: Maybe<
     Array<Maybe<SitePluginPluginOptionsGatsbyRemarkPlugins>>
   >;
   names: Maybe<Scalars["String"]>;
   path: Maybe<Scalars["String"]>;
-  name: Maybe<Scalars["String"]>;
   short_name: Maybe<Scalars["String"]>;
   start_url: Maybe<Scalars["String"]>;
   background_color: Maybe<Scalars["String"]>;
@@ -2925,13 +3135,19 @@ export type SitePluginPluginOptions = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  name: Maybe<StringQueryOperatorInput>;
+  engine: Maybe<StringQueryOperatorInput>;
+  engineOptions: Maybe<StringQueryOperatorInput>;
+  query: Maybe<StringQueryOperatorInput>;
+  ref: Maybe<StringQueryOperatorInput>;
+  index: Maybe<StringQueryOperatorInput>;
+  store: Maybe<StringQueryOperatorInput>;
   extensions: Maybe<StringQueryOperatorInput>;
   gatsbyRemarkPlugins: Maybe<
     SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput
   >;
   names: Maybe<StringQueryOperatorInput>;
   path: Maybe<StringQueryOperatorInput>;
-  name: Maybe<StringQueryOperatorInput>;
   short_name: Maybe<StringQueryOperatorInput>;
   start_url: Maybe<StringQueryOperatorInput>;
   background_color: Maybe<StringQueryOperatorInput>;
@@ -3264,6 +3480,17 @@ export type PostQuery = { __typename?: "Query" } & {
             }
         >;
       }
+  >;
+};
+
+export type SearchQueryVariables = Exact<{ [key: string]: never }>;
+
+export type SearchQuery = { __typename?: "Query" } & {
+  localSearchPages: Maybe<
+    { __typename?: "LocalSearchPages" } & Pick<
+      LocalSearchPages,
+      "index" | "store"
+    >
   >;
 };
 

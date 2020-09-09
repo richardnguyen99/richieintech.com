@@ -7,8 +7,10 @@ import GlobalStyle from "./GlobalStyle";
 import Container from "./Container";
 import Parallax from "./Parallax";
 import Tags from "./Tags";
+import Search from "./Search";
 
 export {
+  Search,
   Layout,
   SEO,
   Row,

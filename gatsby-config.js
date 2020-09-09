@@ -23,6 +23,48 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
     {
+      resolve: `gatsby-plugin-local-search`,
+      options: {
+        name: `pages`,
+        engine: `lunr`,
+        query: `
+          {
+            allMdx {
+              nodes {
+                id
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                  tags
+                  description
+                  categories
+                  date
+                }
+                timeToRead
+                excerpt
+                rawBody
+              }
+            }
+          }
+        `,
+        ref: `id`,
+        index: [`title`, `body`, `tags`],
+        store: [`slug`, `id`, `title`, `tags`, `description`, `excerpt`],
+        normalizer: ({ data }) =>
+          data.allMdx.nodes.map(node => ({
+            id: node.id,
+            slug: `${node.fields.slug}`,
+            title: node.frontmatter.title,
+            tags: node.frontmatter.tags,
+            description: node.frontmatter.description,
+            excerpt: node.excerpt,
+            body: node.rawMarkdownBody,
+          })),
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
