@@ -14,6 +14,8 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --color-text: ${props =>
       props.theme.mode === "light" ? `#1c1c1e` : `#f5f5f5`};
+    --color-subText: ${props =>
+      props.theme.mode === "light" ? `#64707d` : `#eee`};
     --color-bg: ${props => (props.theme.mode === "light" ? `#fff` : `#1c1c1e`)};
     --color-border: ${props =>
       props.theme.mode === "light" ? `#eaecef` : `rgba(245, 245, 245, 0.2)`};

@@ -251,7 +251,9 @@ const StyledPost = styled.div`
   p {
     font-size: 14px;
     font-family: var(--font-sans);
+    margin-top: 2.5rem;
     margin-bottom: 1rem;
+    mask-image: linear-gradient(180deg, #000 50%, transparent);
   }
 
   &::before {

@@ -2742,7 +2742,6 @@ export enum SitePageFieldsEnum {
   PluginCreatorVersion = "pluginCreator___version",
   PluginCreatorPluginOptionsName = "pluginCreator___pluginOptions___name",
   PluginCreatorPluginOptionsEngine = "pluginCreator___pluginOptions___engine",
-  PluginCreatorPluginOptionsEngineOptions = "pluginCreator___pluginOptions___engineOptions",
   PluginCreatorPluginOptionsQuery = "pluginCreator___pluginOptions___query",
   PluginCreatorPluginOptionsRef = "pluginCreator___pluginOptions___ref",
   PluginCreatorPluginOptionsIndex = "pluginCreator___pluginOptions___index",
@@ -2957,7 +2956,6 @@ export enum SitePluginFieldsEnum {
   Version = "version",
   PluginOptionsName = "pluginOptions___name",
   PluginOptionsEngine = "pluginOptions___engine",
-  PluginOptionsEngineOptions = "pluginOptions___engineOptions",
   PluginOptionsQuery = "pluginOptions___query",
   PluginOptionsRef = "pluginOptions___ref",
   PluginOptionsIndex = "pluginOptions___index",
@@ -3108,7 +3106,6 @@ export type SitePluginPluginOptions = {
   __typename?: "SitePluginPluginOptions";
   name: Maybe<Scalars["String"]>;
   engine: Maybe<Scalars["String"]>;
-  engineOptions: Maybe<Scalars["String"]>;
   query: Maybe<Scalars["String"]>;
   ref: Maybe<Scalars["String"]>;
   index: Maybe<Array<Maybe<Scalars["String"]>>>;
@@ -3137,7 +3134,6 @@ export type SitePluginPluginOptions = {
 export type SitePluginPluginOptionsFilterInput = {
   name: Maybe<StringQueryOperatorInput>;
   engine: Maybe<StringQueryOperatorInput>;
-  engineOptions: Maybe<StringQueryOperatorInput>;
   query: Maybe<StringQueryOperatorInput>;
   ref: Maybe<StringQueryOperatorInput>;
   index: Maybe<StringQueryOperatorInput>;
@@ -3480,6 +3476,17 @@ export type PostQuery = { __typename?: "Query" } & {
             }
         >;
       }
+  >;
+  placeholderImage: Maybe<
+    { __typename?: "File" } & {
+      childImageSharp: Maybe<
+        { __typename?: "ImageSharp" } & {
+          fixed: Maybe<
+            { __typename?: "ImageSharpFixed" } & GatsbyImageSharpFixedFragment
+          >;
+        }
+      >;
+    }
   >;
 };
 

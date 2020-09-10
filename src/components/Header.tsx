@@ -132,7 +132,7 @@ const Header: React.FC = () => {
     const currentHeight =
       window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentHeight > 50) {
+    if (currentHeight > 30) {
       setTransparent(false);
     }
 

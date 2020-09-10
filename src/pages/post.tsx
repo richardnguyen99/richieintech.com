@@ -51,8 +51,6 @@ const Post: React.FC<PageProps<BlogQueryQuery>> = props => {
     setQuery(e.target.value);
   };
 
-  console.log(results);
-
   return (
     <PostPageTemplate
       localQuery={localQuery}
