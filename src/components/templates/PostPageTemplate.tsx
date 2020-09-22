@@ -14,7 +14,8 @@ import { PageProps, Link } from "gatsby";
 
 import { BlogQueryQuery } from "@generated/graphql";
 import { Layout, Tags } from "@components";
-import { container } from "@styles/mixins";
+import { useMediaQuery } from "@hooks";
+import { container, media } from "@styles/mixins";
 
 const StyledBlankWrapper = styled.section`
   min-height: 30vh;
@@ -43,8 +44,11 @@ const StyledNumber = styled.div`
 
 const StyledContentWrapper = styled.section`
   ${container()}
+  padding-top: 8rem;
 
   position: relative;
+
+  ${media.lg`padding-top: 0;`}
 `;
 
 const StyledContentHeader = styled.div`
@@ -59,9 +63,11 @@ const StyledContentHeader = styled.div`
 `;
 
 const StyledContentGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 32px;
+  ${media.lg`
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  `}
 `;
 
 const StyledPost = styled.div`
@@ -188,16 +194,19 @@ const PostPageTemplate: React.FC<PostPageProps> = props => {
     onInputChangeValue,
     results,
   } = props;
+  const [wide] = useMediaQuery({ minWidth: "1040px" });
 
   return (
     <Layout>
-      <StyledBlankWrapper>
-        <StyledNumber>
-          <div>
-            <h1>{latest.edges.length}</h1>
-          </div>
-        </StyledNumber>
-      </StyledBlankWrapper>
+      {wide && (
+        <StyledBlankWrapper>
+          <StyledNumber>
+            <div>
+              <h1>{latest.edges.length}</h1>
+            </div>
+          </StyledNumber>
+        </StyledBlankWrapper>
+      )}
       <StyledContentWrapper>
         <StyledSearchContainer>
           <StyledSearchWrapper>
@@ -228,9 +237,9 @@ const PostPageTemplate: React.FC<PostPageProps> = props => {
                     <h4>{node.title}</h4>
                     <h6>{node.description}</h6>
                     <p>{node.excerpt}</p>
-                    <StyledTagContainer>
+                    <div>
                       <Tags tags={node.tags} />
-                    </StyledTagContainer>
+                    </div>
                   </StyledPostContainer>
                 </StyledPost>
               ))
@@ -244,9 +253,9 @@ const PostPageTemplate: React.FC<PostPageProps> = props => {
                   <h4>{edge.node.frontmatter.title}</h4>
                   <h6>{edge.node.frontmatter.description}</h6>
                   <p>{edge.node.excerpt}</p>
-                  <StyledTagContainer>
+                  <div>
                     <Tags tags={edge.node.frontmatter.tags} />
-                  </StyledTagContainer>
+                  </div>
                 </StyledPostContainer>
               </StyledPost>
             ))

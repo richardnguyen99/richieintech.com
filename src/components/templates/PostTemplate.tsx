@@ -14,7 +14,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import { Layout, SEO, Tags } from "@components";
-import { container } from "@styles/mixins";
+import { container, media } from "@styles/mixins";
 import { useScrollDirection } from "@hooks";
 import { PostQuery, IndexQueryQuery } from "@generated/graphql";
 
@@ -68,10 +68,16 @@ const StyledPostLayout = styled.div`
 
   position: relative;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: "post profile" "post headings";
-  gap: 16px 16px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  padding: 0;
+
+  ${media.xl`
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "post profile" "post headings";
+    gap: 16px 16px;
+  `}
 
   padding-top: 128px;
 `;
@@ -97,17 +103,12 @@ const StyledPostHeader = styled.header`
   overflow-wrap: anywhere;
   word-break: break-word;
 
-  padding: 2rem 4rem 0 4rem;
+  padding: 2rem 1rem 0 1rem;
 
-  h1 {
-    font-size: 3rem;
-    font-family: var(--font-heading);
-    font-weight: 800;
-    color: var(--color-heading);
-
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+  ${media.xl`
+    padding-right: 4rem;
+    padding-left: 4rem;
+  `}
 
   h4 {
     font-size: 1rem;
@@ -133,6 +134,18 @@ const StyledPostHeader = styled.header`
   }
 `;
 
+const StyledPostHeaderTitle = styled.h1`
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--color-heading);
+
+  margin-top: 0;
+  margin-bottom: 0;
+
+  ${media.xl`font-size: 3rem;`}
+`;
+
 const StyledTagContainer = styled.div`
   display: flex;
 `;
@@ -140,7 +153,7 @@ const StyledTagContainer = styled.div`
 const StyledPostContent = styled.div`
   font-size: 16px;
   font-family: var(--font-sans);
-  padding: 2rem 4rem;
+  padding: 1rem 1rem;
 
   h1 {
     a {
@@ -157,13 +170,22 @@ const StyledPostContent = styled.div`
       }
     }
   }
+
+  ${media.xl`
+    padding-right: 4rem;
+    padding-left: 4rem;
+  `}
 `;
 
 const StyledSideBar = styled.aside`
-  display: block;
-  grid-area: profile / profile / profile / profile;
-  position: sticky;
-  top: calc(65px + 1rem);
+  display: none;
+
+  ${media.xl`
+    display: block;
+    grid-area: profile / profile / profile / profile;
+    position: sticky;
+    top: calc(65px + 1rem);
+  `}
 `;
 
 const StyledSideBarWrapper = styled.div``;
@@ -397,7 +419,9 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
                 </StyledPostCover>
               )}
               <StyledPostHeader>
-                <h1>{mdx.frontmatter.title}</h1>
+                <StyledPostHeaderTitle>
+                  {mdx.frontmatter.title}
+                </StyledPostHeaderTitle>
                 <h4>{mdx.frontmatter.description}</h4>
                 <StyledTagContainer>
                   <Tags tags={mdx.frontmatter.tags} />

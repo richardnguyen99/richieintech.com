@@ -237,20 +237,7 @@ Array [
     }
   >
     <section
-      className="sc-fzpjYC kDMHyG"
-    >
-      <div
-        className="sc-fznxsB gWEFfu"
-      >
-        <div>
-          <h1>
-            1
-          </h1>
-        </div>
-      </div>
-    </section>
-    <section
-      className="sc-fznJRM kBPcFz"
+      className="sc-fznJRM iemyoe"
     >
       <div
         className="sc-fzoNJl MAkJM"
@@ -280,7 +267,7 @@ Array [
         </h4>
       </div>
       <div
-        className="sc-fzoiQi gkFNmM"
+        className="sc-fzoiQi duBFTU"
       >
         <div
           className="sc-fzqARJ fsrsfw"
@@ -298,9 +285,7 @@ Array [
             <p>
               Some to read
             </p>
-            <div
-              className="sc-fzqNqU kYepZm"
-            >
+            <div>
               <a
                 className="sc-fzoLag kOBOPU"
                 href="/tags/tags"
