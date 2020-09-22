@@ -67,7 +67,6 @@ const StyledPostLayout = styled.div`
   ${container()}
 
   position: relative;
-  z-index: 999;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto 1fr;
@@ -234,7 +233,7 @@ const StyledTableOfContent = styled.nav`
     font-size: 24px;
     font-family: var(--font-sans);
     color: var(--color-text);
-    margin: 0;
+    margin-top: 0;
     padding: 0;
     letter-spacing: -1px;
   }

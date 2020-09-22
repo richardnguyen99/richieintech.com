@@ -6,7 +6,7 @@ Array [
     className="sc-AxhCb bqUvYT"
   >
     <header
-      className="sc-AxhUy kfXuGD"
+      className="sc-AxhUy fMXWqh"
     >
       <div
         className="sc-AxheI dMmxDl"
@@ -47,7 +47,7 @@ Array [
           </svg>
         </a>
         <ul
-          className="sc-AxmLO sc-fzozJi gdovsk"
+          className="sc-AxmLO sc-fzozJi hMcjBL"
         >
           <li
             className="sc-fzoLsD juCxMN"
@@ -237,225 +237,10 @@ Array [
     }
   >
     <section
-      className="sc-fzpjYC lezYzC"
+      className="sc-fzoNJl hukPJs"
     >
       <div
-        className="sc-fznxsB dkpEhu"
-      >
-        <div
-          className="sc-fznKkj mRorc"
-        >
-          <div
-            className="sc-fznZeY jAtTOB"
-          >
-            <h1
-              className="sc-fznJRM ggdVax"
-            >
-              This is Richard
-            </h1>
-            <div
-              className="sc-fznWqX hCeKSj"
-            >
-              <div
-                className="sc-fzoiQi ptzLR"
-              >
-                <span>
-                  01
-                </span>
-                <span />
-                <span>
-                  03
-                </span>
-              </div>
-              <p>
-                I write this website as my digital notebook to store what I've learned about programming.
-              </p>
-              <div
-                className="sc-fzqARJ gVaYiV"
-                onMouseLeave={[Function]}
-                onMouseOver={[Function]}
-              >
-                KNOW MORE
-                <div
-                  className="sc-AxirZ gpWHsK"
-                >
-                  <svg
-                    className="sc-AxiKw jZqpjT"
-                    fill="none"
-                    height="12"
-                    viewBox="0 0 36 12"
-                    width="36"
-                  >
-                    <path
-                      d="M0.75 6H11.25 M6 0.75L11.25 6L6 11.25"
-                      stroke="var(--color-text)"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeOpacity={1}
-                      style={
-                        Object {
-                          "opacity": 0,
-                          "transition": "opacity 125ms ease 0s",
-                        }
-                      }
-                    />
-                    <path
-                      d="M15 10L19.5 5.5L15 1"
-                      stroke="var(--color-text)"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeOpacity={1}
-                      style={
-                        Object {
-                          "opacity": 0,
-                          "transition": "opacity 125ms ease 0s",
-                        }
-                      }
-                    />
-                    <path
-                      d="M23 10L27.5 5.5L23 1"
-                      stroke="var(--color-text)"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeOpacity={0.66}
-                      style={
-                        Object {
-                          "opacity": 0,
-                          "transition": "opacity 125ms ease 0s",
-                        }
-                      }
-                    />
-                    <path
-                      d="M31 10L35.5 5.5L31 1"
-                      stroke="var(--color-text)"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeOpacity={0.35}
-                      style={
-                        Object {
-                          "opacity": 0,
-                          "transition": "opacity 125ms ease 0s",
-                        }
-                      }
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="sc-fznZeY jhXGlp"
-            style={
-              Object {
-                "marginLeft": "auto",
-              }
-            }
-          >
-            <div
-              className="sc-fzqNqU fwPrQL"
-            >
-              <div
-                className="sc-fzoyAV hYGizN"
-                height={0}
-              >
-                <div
-                  className=" gatsby-image-wrapper"
-                  style={
-                    Object {
-                      "maxHeight": null,
-                      "maxWidth": null,
-                      "overflow": "hidden",
-                      "position": "relative",
-                    }
-                  }
-                >
-                  <div
-                    aria-hidden={true}
-                    style={
-                      Object {
-                        "paddingBottom": "50%",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                  <img
-                    alt=""
-                    aria-hidden={true}
-                    src="string_of_base64"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "left": 0,
-                        "objectFit": "cover",
-                        "objectPosition": "center",
-                        "opacity": 1,
-                        "position": "absolute",
-                        "top": 0,
-                        "transitionDelay": "500ms",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                  <picture>
-                    <source
-                      sizes="(max-width: 600px) 100vw, 600px"
-                      srcSet="some srcSetWebp"
-                      type="image/webp"
-                    />
-                    <source
-                      sizes="(max-width: 600px) 100vw, 600px"
-                      srcSet="some srcSet"
-                    />
-                    <img
-                      alt=""
-                      loading="lazy"
-                      onLoad={[Function]}
-                      sizes="(max-width: 600px) 100vw, 600px"
-                      src="test_image.jpg"
-                      srcSet="some srcSet"
-                      style={
-                        Object {
-                          "height": "100%",
-                          "left": 0,
-                          "objectFit": "cover",
-                          "objectPosition": "center",
-                          "opacity": 0,
-                          "position": "absolute",
-                          "top": 0,
-                          "transition": "opacity 500ms",
-                          "width": "100%",
-                        }
-                      }
-                    />
-                  </picture>
-                  <noscript
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "<picture><source type='image/webp' srcset=\\"some srcSetWebp\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><source srcset=\\"some srcSet\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" /><img loading=\\"lazy\\" sizes=\\"(max-width: 600px) 100vw, 600px\\" srcset=\\"some srcSet\\" src=\\"test_image.jpg\\" alt=\\"\\" style=\\"position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
-                      }
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="sc-fzoyTs jgocZH"
-        >
-          <div>
-            <h1>
-              01
-            </h1>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section
-      className="sc-fzoNJl cTakfX"
-    >
-      <div
-        className="sc-fzoXWK hQdamJ"
+        className="sc-fzoXWK hyhzYr"
       >
         <h3
           className="sc-fzpmMD jnAQeW"
@@ -479,9 +264,7 @@ Array [
               <p>
                 Some to read
               </p>
-              <div
-                className="sc-fznMAR iQLWnV"
-              >
+              <div>
                 <a
                   className="sc-fzoLag kOBOPU"
                   href="/tags/tags"
@@ -494,7 +277,7 @@ Array [
         </div>
       </div>
       <div
-        className="sc-fzolEj cioJdi"
+        className="sc-fzolEj fcQkkB"
       >
         <h3
           className="sc-fzpmMD jnAQeW"
@@ -511,8 +294,12 @@ Array [
         </div>
       </div>
       <div
-        className="sc-fzqBkg cifTAZ"
-      />
+        className="sc-fzqBkg kjhWGJ"
+      >
+        <div>
+          Hello
+        </div>
+      </div>
     </section>
   </div>,
 ]

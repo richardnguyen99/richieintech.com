@@ -5,8 +5,9 @@ import { graphql, Link } from "gatsby";
 
 import { SEO, Parallax, Layout, Row, Col, Tags } from "@components";
 import { Arrow } from "@components/svg";
+import { useMediaQuery } from "@hooks";
 import { IndexQueryQuery } from "@generated/graphql";
-import { container } from "@styles/mixins";
+import { container, media } from "@styles/mixins";
 
 export const query = graphql`
   query IndexQuery {
@@ -138,7 +139,7 @@ const StyledHeroButton = styled.div`
   margin: 64px 0 0 auto;
   font-weight: 700;
   text-transform: uppercase;
-  z-index: 1000;
+  z-index: 100;
 
   > div {
     display: inline-block;
@@ -183,19 +184,35 @@ const StyledNumber = styled.div`
 /** HERO SECTION ENDS */
 /** CONTENT SECTION STARTS */
 const StyledContentWrapper = styled.section`
-  ${container()}
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
 
   position: relative;
   z-index: 999;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: "newest categories" "newest popular";
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "newest" "categories" "popular";
   gap: 64px 96px;
+  padding-top: 8rem;
+
+  ${media.lg`
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "newest categories" "newest popular";
+    padding: 0;
+    padding-top: 5rem;
+  `}
 `;
 
 const StyledNewestPosts = styled.div`
-  grid-area: "newest / newest / newest / newest";
+  grid-area: newest / newest / newest / none;
+
+  ${media.lg`grid-area: newest / newest / newest / newest;`}
 `;
 
 const StyledHeading = styled.h3`
@@ -207,13 +224,6 @@ const StyledHeading = styled.h3`
   text-transform: uppercase;
 
   margin-top: 0;
-`;
-
-const postAnimation = keyframes`
-    0%   {border-left: 2px solid #ffffff;}
-    25%  {border-left: 3px solid #ffe6e6;}
-    50%  {border-left: 4px solid #ff8080;}
-    100% {border-left: 5px solid #ff0000;}
 `;
 
 const StyledPost = styled.div`
@@ -288,10 +298,16 @@ const StyledPostContainer = styled.a`
 `;
 
 const StyledTags = styled.div`
-  grid-area: "categories /  categories / categories / categories";
+  grid-area: categories;
+
+  ${media.lg`grid-area: categories / categories / categories / categories;`}
 `;
 
-const StyledPopularPosts = styled.div``;
+const StyledPopularPosts = styled.div`
+  grid-area: popular;
+
+  ${media.lg`grid-area: popular / popular / popular / popular;`}
+`;
 /** CONTENT SECTION ENDS */
 
 const Home: React.FC<HomeProps> = ({
@@ -305,50 +321,60 @@ const Home: React.FC<HomeProps> = ({
     });
   });
   const [hovered, setHovered] = useState(false);
+  const [wide] = useMediaQuery({ minWidth: "1040px" });
 
   return (
     <>
       <Layout>
         <SEO data={SEOData} />
-        <StyledHeroWrapper>
-          <StyledHeroContent>
-            <Row>
-              <Col lg={5}>
-                <StyledHeroHeading>This is Richard</StyledHeroHeading>
-                <StyledHeroSubContent>
-                  <StyledHeroCount>
-                    <span>01</span>
-                    <span />
-                    <span>03</span>
-                  </StyledHeroCount>
-                  <p>
-                    I write this website as my digital notebook to store what
-                    I&apos;ve learned about programming.
-                  </p>
-                  <StyledHeroButton
-                    onMouseOver={() => setHovered(true)}
-                    onMouseLeave={() => setHovered(false)}
-                  >
-                    KNOW MORE
-                    <Arrow onHovered={hovered} />
-                  </StyledHeroButton>
-                </StyledHeroSubContent>
-              </Col>
-              <Col lg={6} style={{ marginLeft: "auto" }}>
-                <StyledImageContainer>
-                  <Parallax>
-                    <Img fluid={placeholderImage.childImageSharp.fluid} />
-                  </Parallax>
-                </StyledImageContainer>
-              </Col>
-            </Row>
-            <StyledNumber>
-              <div>
-                <h1>01</h1>
-              </div>
-            </StyledNumber>
-          </StyledHeroContent>
-        </StyledHeroWrapper>
+        {wide ? (
+          <StyledHeroWrapper>
+            <StyledHeroContent>
+              <Row>
+                <Col lg={5}>
+                  <StyledHeroHeading>This is Richard</StyledHeroHeading>
+                  <StyledHeroSubContent>
+                    <StyledHeroCount>
+                      <span>01</span>
+                      <span />
+                      <span>03</span>
+                    </StyledHeroCount>
+                    <p>
+                      I write this website as my digital notebook to store what
+                      I&apos;ve learned about programming.
+                    </p>
+                    <StyledHeroButton
+                      onMouseOver={() => setHovered(true)}
+                      onMouseLeave={() => setHovered(false)}
+                    >
+                      KNOW MORE
+                      <Arrow onHovered={hovered} />
+                    </StyledHeroButton>
+                  </StyledHeroSubContent>
+                </Col>
+                <Col
+                  lg={6}
+                  style={{
+                    marginLeft: "auto",
+                    marginTop: "auto",
+                    marginBottom: "auto",
+                  }}
+                >
+                  <StyledImageContainer>
+                    <Parallax>
+                      <Img fluid={placeholderImage.childImageSharp.fluid} />
+                    </Parallax>
+                  </StyledImageContainer>
+                </Col>
+              </Row>
+              <StyledNumber>
+                <div>
+                  <h1>01</h1>
+                </div>
+              </StyledNumber>
+            </StyledHeroContent>
+          </StyledHeroWrapper>
+        ) : null}
         <StyledContentWrapper>
           <StyledNewestPosts>
             <StyledHeading>Latest Posts</StyledHeading>
@@ -359,9 +385,9 @@ const Home: React.FC<HomeProps> = ({
                     <h4>{edge.node.frontmatter.title}</h4>
                     <h6>{edge.node.frontmatter.description}</h6>
                     <p>{edge.node.excerpt}</p>
-                    <StyledTagContainer>
+                    <div>
                       <Tags tags={edge.node.frontmatter.tags} />
-                    </StyledTagContainer>
+                    </div>
                   </StyledPostContainer>
                 </StyledPost>
               ))}
@@ -373,7 +399,9 @@ const Home: React.FC<HomeProps> = ({
               <Tags tags={Array.from(tags)} />
             </div>
           </StyledTags>
-          <StyledPopularPosts />
+          <StyledPopularPosts>
+            <div>Hello</div>
+          </StyledPopularPosts>
         </StyledContentWrapper>
       </Layout>
     </>

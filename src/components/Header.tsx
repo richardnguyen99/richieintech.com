@@ -8,7 +8,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 import { ThemeContext } from "@context/ThemeContext";
-import { container } from "@styles/mixins";
+import { container, media } from "@styles/mixins";
 import { ThemeSwitch, Logo } from "./svg";
 
 const StyledNavbarWrapper = styled.div`
@@ -34,7 +34,7 @@ const StyledNavbar = styled.header<StyledNavbarProps>`
 
   /* Allow navbar align in center */
   ${container()}
-  padding: ${props => (props.scrolled ? `3rem 0 0 0` : `0.5rem 0 0 0`)};
+  padding-top: ${props => (props.scrolled ? `3rem` : `0.5rem`)};
   border-bottom: ${props => !props.scrolled && `1px solid var(--color-border)`};
 
   transition: all 200ms ease;
@@ -78,6 +78,9 @@ const StyledNavbarNavigation = styled.ul`
 
 const StyledLeftNavbarNavigation = styled(StyledNavbarNavigation)`
   margin-left: 2rem;
+  display: none;
+
+  ${media.lg`display: flex;`}
 `;
 
 const StyledNavbarNavigationItem = styled.li`

@@ -5,7 +5,7 @@ exports[`Header rendered correctly 1`] = `
   className="sc-AxhCb bqUvYT"
 >
   <header
-    className="sc-AxhUy kfXuGD"
+    className="sc-AxhUy fMXWqh"
   >
     <div
       className="sc-AxheI dMmxDl"
@@ -46,7 +46,7 @@ exports[`Header rendered correctly 1`] = `
         </svg>
       </a>
       <ul
-        className="sc-AxmLO sc-fzozJi gdovsk"
+        className="sc-AxmLO sc-fzozJi hMcjBL"
       >
         <li
           className="sc-fzoLsD juCxMN"

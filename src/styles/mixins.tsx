@@ -15,15 +15,6 @@ import {
 
 import { breakpoints } from "./variables";
 
-export const container = (): FlattenSimpleInterpolation => css`
-  width: 100%;
-  max-width: 1040px;
-
-  margin: 0 auto;
-`;
-
-export default container;
-
 export const media = Object.keys(breakpoints).reduce(
   (
     accumulator: {
@@ -54,3 +45,16 @@ export const media = Object.keys(breakpoints).reduce(
   },
   {}
 );
+
+export const container = (): FlattenSimpleInterpolation => css`
+  width: 100%;
+
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  ${media.sm`max-width: 540px;`}
+  ${media.md`max-width: 720px;`}
+  ${media.lg`max-width: 968px;`}
+  ${media.xl`max-width: 1040px; padding-right: 0; padding-left: 0;`}
+`;
