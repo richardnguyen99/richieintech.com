@@ -2747,8 +2747,6 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsIndex = "pluginCreator___pluginOptions___index",
   PluginCreatorPluginOptionsStore = "pluginCreator___pluginOptions___store",
   PluginCreatorPluginOptionsExtensions = "pluginCreator___pluginOptions___extensions",
-  PluginCreatorPluginOptionsGatsbyRemarkPlugins = "pluginCreator___pluginOptions___gatsbyRemarkPlugins",
-  PluginCreatorPluginOptionsGatsbyRemarkPluginsResolve = "pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve",
   PluginCreatorPluginOptionsNames = "pluginCreator___pluginOptions___names",
   PluginCreatorPluginOptionsPath = "pluginCreator___pluginOptions___path",
   PluginCreatorPluginOptionsShortName = "pluginCreator___pluginOptions___short_name",
@@ -2961,12 +2959,6 @@ export enum SitePluginFieldsEnum {
   PluginOptionsIndex = "pluginOptions___index",
   PluginOptionsStore = "pluginOptions___store",
   PluginOptionsExtensions = "pluginOptions___extensions",
-  PluginOptionsGatsbyRemarkPlugins = "pluginOptions___gatsbyRemarkPlugins",
-  PluginOptionsGatsbyRemarkPluginsResolve = "pluginOptions___gatsbyRemarkPlugins___resolve",
-  PluginOptionsGatsbyRemarkPluginsOptionsMaxWidth = "pluginOptions___gatsbyRemarkPlugins___options___maxWidth",
-  PluginOptionsGatsbyRemarkPluginsOptionsClassPrefix = "pluginOptions___gatsbyRemarkPlugins___options___classPrefix",
-  PluginOptionsGatsbyRemarkPluginsOptionsShowLineNumbers = "pluginOptions___gatsbyRemarkPlugins___options___showLineNumbers",
-  PluginOptionsGatsbyRemarkPluginsOptionsNoInlineHighlight = "pluginOptions___gatsbyRemarkPlugins___options___noInlineHighlight",
   PluginOptionsNames = "pluginOptions___names",
   PluginOptionsPath = "pluginOptions___path",
   PluginOptionsShortName = "pluginOptions___short_name",
@@ -3111,9 +3103,6 @@ export type SitePluginPluginOptions = {
   index: Maybe<Array<Maybe<Scalars["String"]>>>;
   store: Maybe<Array<Maybe<Scalars["String"]>>>;
   extensions: Maybe<Array<Maybe<Scalars["String"]>>>;
-  gatsbyRemarkPlugins: Maybe<
-    Array<Maybe<SitePluginPluginOptionsGatsbyRemarkPlugins>>
-  >;
   names: Maybe<Scalars["String"]>;
   path: Maybe<Scalars["String"]>;
   short_name: Maybe<Scalars["String"]>;
@@ -3139,9 +3128,6 @@ export type SitePluginPluginOptionsFilterInput = {
   index: Maybe<StringQueryOperatorInput>;
   store: Maybe<StringQueryOperatorInput>;
   extensions: Maybe<StringQueryOperatorInput>;
-  gatsbyRemarkPlugins: Maybe<
-    SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput
-  >;
   names: Maybe<StringQueryOperatorInput>;
   path: Maybe<StringQueryOperatorInput>;
   short_name: Maybe<StringQueryOperatorInput>;
@@ -3157,53 +3143,6 @@ export type SitePluginPluginOptionsFilterInput = {
   theme_color_in_head: Maybe<BooleanQueryOperatorInput>;
   cacheDigest: Maybe<StringQueryOperatorInput>;
   pathCheck: Maybe<BooleanQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsGatsbyRemarkPlugins = {
-  __typename?: "SitePluginPluginOptionsGatsbyRemarkPlugins";
-  resolve: Maybe<Scalars["String"]>;
-  options: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptions>;
-};
-
-export type SitePluginPluginOptionsGatsbyRemarkPluginsFilterInput = {
-  resolve: Maybe<StringQueryOperatorInput>;
-  options: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput>;
-};
-
-export type SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput = {
-  elemMatch: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsFilterInput>;
-};
-
-export type SitePluginPluginOptionsGatsbyRemarkPluginsOptions = {
-  __typename?: "SitePluginPluginOptionsGatsbyRemarkPluginsOptions";
-  maxWidth: Maybe<Scalars["Int"]>;
-  classPrefix: Maybe<Scalars["String"]>;
-  showLineNumbers: Maybe<Scalars["Boolean"]>;
-  noInlineHighlight: Maybe<Scalars["Boolean"]>;
-  prompt: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPrompt>;
-};
-
-export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput = {
-  maxWidth: Maybe<IntQueryOperatorInput>;
-  classPrefix: Maybe<StringQueryOperatorInput>;
-  showLineNumbers: Maybe<BooleanQueryOperatorInput>;
-  noInlineHighlight: Maybe<BooleanQueryOperatorInput>;
-  prompt: Maybe<
-    SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPromptFilterInput
-  >;
-};
-
-export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPrompt = {
-  __typename?: "SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPrompt";
-  user: Maybe<Scalars["String"]>;
-  host: Maybe<Scalars["String"]>;
-  global: Maybe<Scalars["Boolean"]>;
-};
-
-export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPromptFilterInput = {
-  user: Maybe<StringQueryOperatorInput>;
-  host: Maybe<StringQueryOperatorInput>;
-  global: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {
@@ -3452,8 +3391,18 @@ export type PostQuery = { __typename?: "Query" } & {
   mdx: Maybe<
     { __typename?: "Mdx" } & Pick<
       Mdx,
-      "body" | "excerpt" | "id" | "timeToRead"
+      "body" | "excerpt" | "id" | "timeToRead" | "tableOfContents"
     > & {
+        headings: Maybe<
+          Array<
+            Maybe<
+              { __typename?: "MdxHeadingMdx" } & Pick<
+                MdxHeadingMdx,
+                "depth" | "value"
+              >
+            >
+          >
+        >;
         fields: Maybe<{ __typename?: "MdxFields" } & Pick<MdxFields, "slug">>;
         frontmatter: Maybe<
           { __typename?: "MdxFrontmatter" } & Pick<

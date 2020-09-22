@@ -68,8 +68,13 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        remarkPlugins: [require(`remark-capitalize`), require(`remark-emoji`)],
+        remarkPlugins: [
+          require(`remark-capitalize`),
+          require(`remark-emoji`),
+          require(`remark-slug`),
+        ],
         gatsbyRemarkPlugins: [
+          `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-images`,
             options: {

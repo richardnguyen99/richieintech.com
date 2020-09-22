@@ -4,16 +4,18 @@
  *
  * @author Richard Nguyen <richard.ng0616@gmail.com>
  */
-import React from "react";
-import styled from "styled-components";
-import { MarkGithubIcon } from "@primer/octicons-react";
+import React, { useState, useRef, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
 import Image from "gatsby-image";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
+import { MarkGithubIcon } from "@primer/octicons-react";
+
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import { Layout, SEO, Tags } from "@components";
 import { container } from "@styles/mixins";
+import { useScrollDirection } from "@hooks";
 import { PostQuery, IndexQueryQuery } from "@generated/graphql";
 
 interface PostTemplateProps {
@@ -27,6 +29,11 @@ export const postQuery = graphql`
       excerpt
       id
       timeToRead
+      headings(depth: h1) {
+        depth
+        value
+      }
+      tableOfContents
       fields {
         slug
       }
@@ -71,7 +78,7 @@ const StyledPostLayout = styled.div`
 `;
 
 const StyledPostContainer = styled.div`
-  grid-area: "post / post / post / post";
+  grid-area: post / post / post / post;
   min-width: 0;
 `;
 
@@ -129,23 +136,38 @@ const StyledPostHeader = styled.header`
 
 const StyledTagContainer = styled.div`
   display: flex;
-  grid-area: "profile / profile / profile / profile";
 `;
 
 const StyledPostContent = styled.div`
   font-size: 16px;
   font-family: var(--font-sans);
   padding: 2rem 4rem;
+
+  h1 {
+    a {
+      position: absolute;
+      top: -5px;
+      left: -40px;
+      fill: var(--color-text);
+      opacity: 0;
+    }
+
+    &:hover {
+      a {
+        opacity: 1;
+      }
+    }
+  }
 `;
 
 const StyledSideBar = styled.aside`
   display: block;
-`;
-
-const StyledSideBarWrapper = styled.div`
+  grid-area: profile / profile / profile / profile;
   position: sticky;
   top: calc(65px + 1rem);
 `;
+
+const StyledSideBarWrapper = styled.div``;
 
 const StyledProfileContainer = styled.div`
   border-radius: 6px;
@@ -193,29 +215,109 @@ const StyledFollowButton = styled.a`
   color: var(--color-bg);
 `;
 
-const StyledMetadataContainer = styled.div`
-  font-family: var(--font-sans);
+const StyledContentTable = styled.aside`
+  margin-top: 1rem;
+  border-radius: 6px;
+  background: var(--color-bg);
+  color: var(--color-text);
+
+  border: 1px solid var(--color-border);
+
+  padding: 1rem;
 `;
 
-const StyledMetadataList = styled.ul`
+const StyledTableOfContent = styled.nav`
+  padding: 1rem 0rem;
+  position: relative;
+
+  h1 {
+    font-size: 24px;
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    letter-spacing: -1px;
+  }
+`;
+
+const StyledTOCList = styled.ul`
   list-style: none;
   padding: 0;
+  margin: 0;
+  line-height: 2;
 `;
 
-const StyledMetadataItem = styled.li`
-  padding: 0.5rem 0;
-  h3 {
-    text-transform: uppercase;
-    font-family: inherit;
-    font-size: 14px;
-    margin: 0;
+const StyledTOCListItem = styled.li`
+  font-family: var(--font-sans);
+  transition: all 0.3s ease;
+`;
+
+const strikeOut = keyframes`
+  0% {
+    height: 100%;
+    top: auto;
+    bottom: 0;
+  }
+  100% {
+    height: 0;
+    top: auto;
+    bottom: 0;
+  }
+`;
+
+const strikeUpIn = keyframes`
+  0% {
+    top: auto;
+    bottom: 0;
+    height: 0;
+  }
+  100% {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+`;
+const strikeDownIn = keyframes`
+  0% {
+    top: 0;
+    bottom: auto;
+    height: 0;
+  }
+  100% {
+    top: 0;
+    bottom: auto;
+    height: 100%;
+  }
+`;
+
+const StyledTOCListLink = styled(Link)`
+  font-size: 16px;
+  display: inline-block;
+  position: relative;
+  padding-left: 0.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 3px;
+    background: var(--color-text);
+
+    animation: ${strikeOut} 0.3s ease;
   }
 
-  p {
-    font-family: inherit;
-    font-size: 14px;
-    opacity: 0.7;
-    margin: 0;
+  &.d-active {
+    &::before {
+      height: 100%;
+      animation: ${strikeDownIn} 0.3s ease;
+    }
+  }
+  &.u-active {
+    &::before {
+      height: 100%;
+      animation: ${strikeUpIn} 0.3s ease;
+    }
   }
 `;
 
@@ -230,6 +332,53 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
     twitterUsername: `@richardnguyenmh`,
   };
 
+  const direction = useScrollDirection({ initialDirection: "down" });
+
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const tocRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      const id = entry.target.getAttribute("id");
+      if (id) {
+        if (entry.intersectionRatio > 0) {
+          const element = document.querySelector(
+            `nav li a[href="${mdx.fields.slug.concat("#", id)}"]`
+          );
+
+          if (element) {
+            if (direction === "down") {
+              if (!element.classList.contains("u-active")) {
+                element.classList.add("d-active");
+              }
+            } else if (direction === "up") {
+              if (!element.classList.contains("d-active")) {
+                element.classList.add("u-active");
+              }
+            }
+          }
+        } else {
+          const element = document.querySelector(
+            `nav li a[href="${mdx.fields.slug.concat("#", id)}"]`
+          );
+
+          if (element) {
+            if (element.classList.contains("d-active"))
+              element.classList.remove("d-active");
+            if (element.classList.contains("u-active"))
+              element.classList.remove("u-active");
+          }
+        }
+      }
+    });
+
+    if (bodyRef.current) {
+      bodyRef.current.querySelectorAll("h1[id]").forEach(element => {
+        observer.observe(element);
+      });
+    }
+  }, [tocRef, direction, mdx.fields.slug]);
+
   return (
     <Layout>
       <SEO data={SEOData} />
@@ -240,7 +389,10 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
               {mdx.frontmatter.thumbnail && (
                 <StyledPostCover>
                   <Image
-                    style={{ borderRadius: `6px` }}
+                    style={{
+                      borderTopLeftRadius: `6px`,
+                      borderTopRightRadius: `6px`,
+                    }}
                     fluid={mdx.frontmatter.thumbnail.childImageSharp.fluid}
                   />
                 </StyledPostCover>
@@ -262,8 +414,8 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
                   </div>
                 </div>
               </StyledPostHeader>
-              <StyledPostContent>
-                <MDXRenderer>{mdx.body}</MDXRenderer>
+              <StyledPostContent id="body" ref={bodyRef}>
+                <MDXRenderer headings={mdx.headings}>{mdx.body}</MDXRenderer>
               </StyledPostContent>
             </StyledPost>
           </StyledPostContainer>
@@ -299,24 +451,26 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
                 Follow me on&nbsp;
                 <MarkGithubIcon />
               </StyledFollowButton>
-              <StyledMetadataContainer>
-                <StyledMetadataList>
-                  <StyledMetadataItem>
-                    <h3>Status</h3>
-                    <p>Student</p>
-                  </StyledMetadataItem>
-                  <StyledMetadataItem>
-                    <h3>Location</h3>
-                    <p>Kent, Washington, US</p>
-                  </StyledMetadataItem>
-                  <StyledMetadataItem>
-                    <h3>Status</h3>
-                    <p>Student</p>
-                  </StyledMetadataItem>
-                </StyledMetadataList>
-              </StyledMetadataContainer>
             </StyledProfileContainer>
           </StyledSideBarWrapper>
+          <StyledContentTable>
+            <StyledTableOfContent ref={tocRef} id="toc">
+              <h1>Table of Content</h1>
+              <StyledTOCList>
+                {typeof mdx.tableOfContents.items !== "undefined"
+                  ? // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-ignore
+                    mdx.tableOfContents.items.map(item => (
+                      <StyledTOCListItem key={item.value}>
+                        <StyledTOCListLink to={item.url}>
+                          {item.title}
+                        </StyledTOCListLink>
+                      </StyledTOCListItem>
+                    ))
+                  : null}
+              </StyledTOCList>
+            </StyledTableOfContent>
+          </StyledContentTable>
         </StyledSideBar>
       </StyledPostLayout>
     </Layout>

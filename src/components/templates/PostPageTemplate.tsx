@@ -10,7 +10,7 @@
 import React from "react";
 import styled from "styled-components";
 import lunr from "lunr";
-import { PageProps } from "gatsby";
+import { PageProps, Link } from "gatsby";
 
 import { BlogQueryQuery } from "@generated/graphql";
 import { Layout, Tags } from "@components";
@@ -104,7 +104,7 @@ const StyledPost = styled.div`
 
     margin-top: 2.5rem;
     margin-bottom: 1rem;
-    mask-image: linear-gradient(180deg, #000 50%, transparent);
+    mask-image: linear-gradient(180deg, #000 0%, transparent);
   }
 
   &::before {
@@ -134,7 +134,7 @@ const StyledTagContainer = styled.div`
   justify-content: flex-start;
 `;
 
-const StyledPostContainer = styled.a`
+const StyledPostContainer = styled(Link)`
   height: 100%;
 `;
 
@@ -224,7 +224,7 @@ const PostPageTemplate: React.FC<PostPageProps> = props => {
               // @ts-ignore
               results.map(node => (
                 <StyledPost key={node.title}>
-                  <StyledPostContainer href={node.slug}>
+                  <StyledPostContainer to={node.slug}>
                     <h4>{node.title}</h4>
                     <h6>{node.description}</h6>
                     <p>{node.excerpt}</p>
@@ -240,7 +240,7 @@ const PostPageTemplate: React.FC<PostPageProps> = props => {
           ) : (
             latest.edges.map(edge => (
               <StyledPost key={edge.node.frontmatter.title}>
-                <StyledPostContainer href={edge.node.fields.slug}>
+                <StyledPostContainer to={edge.node.fields.slug}>
                   <h4>{edge.node.frontmatter.title}</h4>
                   <h6>{edge.node.frontmatter.description}</h6>
                   <p>{edge.node.excerpt}</p>
