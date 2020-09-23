@@ -237,16 +237,16 @@ Array [
     }
   >
     <section
-      className="sc-fznJRM iemyoe"
+      className="sc-fznxKY gEJCtN"
     >
       <div
-        className="sc-fzoNJl MAkJM"
+        className="sc-fzoxKX lkDDkj"
       >
         <span
-          className="sc-fzoXWK fMwCSm"
+          className="sc-fzoKki krVyQj"
         >
           <input
-            className="sc-fzpmMD llQpjO"
+            className="sc-fzoYkl kwVtxn"
             id="search"
             onChange={[Function]}
             placeholder="Search posts"
@@ -256,7 +256,7 @@ Array [
         </span>
       </div>
       <div
-        className="sc-fznWqX cRiCys"
+        className="sc-fznMAR ehfnXo"
       >
         <h1>
           Newest
@@ -267,13 +267,13 @@ Array [
         </h4>
       </div>
       <div
-        className="sc-fzoiQi duBFTU"
+        className="sc-fznWOq gJxlyR"
       >
         <div
-          className="sc-fzqARJ fsrsfw"
+          className="sc-fzolEj ibQTkg"
         >
           <a
-            className="sc-fzoyTs fKcgqV"
+            className="sc-fzqPZZ ehYVuF"
             href="/"
           >
             <h4>
@@ -287,7 +287,7 @@ Array [
             </p>
             <div>
               <a
-                className="sc-fzoLag kOBOPU"
+                className="sc-fzoyTs cukZZQ"
                 href="/tags/tags"
               >
                 tags
@@ -298,5 +298,110 @@ Array [
       </div>
     </section>
   </div>,
+  <footer
+    className="sc-fznKkj gVunmi"
+  >
+    <div
+      className="sc-fznZeY eNnRKt"
+    >
+      <div
+        className="sc-fzokOt aCGdj"
+      >
+        <div>
+          <a
+            aria-current="page"
+            className="sc-fzqBZW gQzHbQ"
+            href="/"
+            onClick={[Function]}
+          >
+            Richie in Tech
+          </a>
+          <p
+            style={
+              Object {
+                "fontWeight": 700,
+              }
+            }
+          >
+            Thank you for visiting me!
+          </p>
+        </div>
+        <img
+          alt="Made with love in Vietnam"
+          src="https://img.shields.io/static/v1?label=Made by Richard&message=with ♥&color=red"
+          style={Object {}}
+        />
+      </div>
+      <div
+        className="sc-fzqNJr euAIYQ"
+      >
+        <div
+          className="sc-fzoyAV hrYkud"
+        >
+          <p
+            style={
+              Object {
+                "fontWeight": 700,
+              }
+            }
+          >
+            Tutorials
+          </p>
+          <div
+            className="sc-fzoLag jJCdMr"
+          >
+            <p>
+              Gatsby
+            </p>
+            <p>
+              Typescript
+            </p>
+            <p>
+              React
+            </p>
+            <p>
+              Python
+            </p>
+          </div>
+        </div>
+        <div
+          className="sc-fzoyAV hrYkud"
+        >
+          <p
+            style={
+              Object {
+                "fontWeight": 700,
+              }
+            }
+          >
+            Link
+          </p>
+          <div
+            className="sc-fzoXzr jZShQi"
+          >
+            <a
+              href="https://richieintech.com/rss.xml"
+            >
+              RSS
+            </a>
+            <a
+              href="https://github.com/richardnguyen99"
+            >
+              Github
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        className="sc-fzpjYC cajHqM"
+      >
+        <img
+          alt="Made with love in Vietnam"
+          src="https://img.shields.io/static/v1?label=Made by Richard&message=with ♥&color=red"
+          style={Object {}}
+        />
+      </div>
+    </div>
+  </footer>,
 ]
 `;

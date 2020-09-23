@@ -399,9 +399,7 @@ const Home: React.FC<HomeProps> = ({
               <Tags tags={Array.from(tags)} />
             </div>
           </StyledTags>
-          <StyledPopularPosts>
-            <div>Hello</div>
-          </StyledPopularPosts>
+          <StyledPopularPosts />
         </StyledContentWrapper>
       </Layout>
     </>

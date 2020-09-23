@@ -8,8 +8,10 @@ import Container from "./Container";
 import Parallax from "./Parallax";
 import Tags from "./Tags";
 import Search from "./Search";
+import Footer from "./Footer";
 
 export {
+  Footer,
   Search,
   Layout,
   SEO,

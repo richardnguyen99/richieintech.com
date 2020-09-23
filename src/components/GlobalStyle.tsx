@@ -17,6 +17,10 @@ const GlobalStyle = createGlobalStyle`
     --color-subText: ${props =>
       props.theme.mode === "light" ? `#64707d` : `#eee`};
     --color-bg: ${props => (props.theme.mode === "light" ? `#fff` : `#1c1c1e`)};
+    --color-footer: ${props =>
+      props.theme.mode === "light"
+        ? `linear-gradient(180deg, var(--color-bg), #e0e0e0)`
+        : `linear-gradient(180deg, var(--color-bg), #0f0f0f)`};
     --color-border: ${props =>
       props.theme.mode === "light" ? `#eaecef` : `rgba(245, 245, 245, 0.2)`};
     --color-border-onHover: ${props =>

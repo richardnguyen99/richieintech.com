@@ -6,6 +6,7 @@
 import React from "react";
 
 import Header from "./Header";
+import Footer from "./Footer";
 
 interface PageProps {
   title?: string;
@@ -21,6 +22,7 @@ const Layout: React.FC<PageProps> = ({ children }) => {
       >
         {children}
       </div>
+      <Footer />
     </>
   );
 };
