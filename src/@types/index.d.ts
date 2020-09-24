@@ -26,9 +26,12 @@ declare module "@mdx-js/react" {
     | "td"
     | "thematicBreak"
     | "tr"
-    | "ul";
+    | "ul"
+    | any;
   export type Components = {
-    [key in ComponentType]?: React.ComponentType<{ children: React.ReactNode }>;
+    [key in ComponentType]?:
+      | React.ComponentType<{ children: React.ReactNode }>
+      | React.FC<U>;
   };
   export interface MDXProviderProps {
     children: React.ReactNode;

@@ -9,9 +9,11 @@ import Parallax from "./Parallax";
 import Tags from "./Tags";
 import Search from "./Search";
 import Footer from "./Footer";
+import CodeSnippet from "./CodeSnippet";
 
 export {
   Footer,
+  CodeSnippet,
   Search,
   Layout,
   SEO,

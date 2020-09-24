@@ -13,7 +13,7 @@ import { MarkGithubIcon } from "@primer/octicons-react";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import { Layout, SEO, Tags } from "@components";
+import { Layout, SEO, Tags, CodeSnippet } from "@components";
 import { container, media } from "@styles/mixins";
 import { useScrollDirection } from "@hooks";
 import { PostQuery, IndexQueryQuery } from "@generated/graphql";
@@ -405,7 +405,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
     <Layout>
       <SEO data={SEOData} />
       <StyledPostLayout>
-        <MDXProvider components={{}}>
+        <MDXProvider components={{ CodeSnippet }}>
           <StyledPostContainer>
             <StyledPost>
               {mdx.frontmatter.thumbnail && (
