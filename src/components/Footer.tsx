@@ -22,8 +22,8 @@ const StyledFooter = styled.div`
   justify-content: flex-start;
   flex-direction: column;
 
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
   border-top: 1px solid var(--color-border);
 
   ${media.xl`

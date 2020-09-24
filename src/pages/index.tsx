@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Img from "gatsby-image";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 
 import { SEO, Parallax, Layout, Row, Col, Tags } from "@components";
 import { Arrow } from "@components/svg";
@@ -286,11 +286,6 @@ const StyledPost = styled.div`
       opacity: 1;
     }
   }
-`;
-
-const StyledTagContainer = styled.div`
-  display: flex;
-  justify-content: flex-start;
 `;
 
 const StyledPostContainer = styled.a`

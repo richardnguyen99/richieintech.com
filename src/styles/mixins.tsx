@@ -7,7 +7,6 @@ import {
   css,
   CSSObject,
   FlattenSimpleInterpolation,
-  SimpleInterpolation,
   Interpolation,
   InterpolationFunction,
   DefaultTheme,

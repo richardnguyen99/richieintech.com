@@ -70,7 +70,10 @@ const StyledPostLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-  padding: 0;
+  padding-top: 128px;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 16px;
 
   ${media.xl`
     grid-template-columns: 2fr 1fr;
@@ -78,8 +81,6 @@ const StyledPostLayout = styled.div`
     grid-template-areas: "post profile" "post headings";
     gap: 16px 16px;
   `}
-
-  padding-top: 128px;
 `;
 
 const StyledPostContainer = styled.div`
