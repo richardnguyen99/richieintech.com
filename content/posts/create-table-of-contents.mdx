@@ -1,6 +1,6 @@
 ---
 title: Create Table of Contents in Gatsby
-description: How to implement table of contents component with IntersectionObserver
+description: How to implement table of contents component with Gatsby & IntersectionObserver
 date: "2020-09-23"
 categories:
   - Blog
@@ -8,23 +8,9 @@ categories:
 tags:
   - gatsby
   - typescript
-thumbnail: ../thumbnails/avatar.JPG
+thumbnail: ../thumbnails/intersection-observer.jpg
 ---
 
-# What is Intersection Observer?
+When I was developing the Post feature (the layout that you're reading right now), I encoutered a problem with creating the Table of Content (TOC) component. How to set this up? How to export headers in MDX contents to the TOC component? Today, I will help you to achieve that in Gatsby.
 
-<CodeSnippet>.tsx</CodeSnippet>
-
-```tsx
-import React from "react";
-
-const Example: React.FC = () => {
-  const TOP_MARGIN = 1;
-
-  const onHandleChange = () => {};
-
-  return <div />;
-};
-
-export default Example;
-```
+> Note: In this post, I mainly focus on implementing the TOC component into the site. I will not focus on creating a layout or a page, but the final project could be found [here](https://github.com/richardnguyen99/)

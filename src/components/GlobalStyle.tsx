@@ -17,6 +17,8 @@ const GlobalStyle = createGlobalStyle`
     --color-subText: ${props =>
       props.theme.mode === "light" ? `#64707d` : `#eee`};
     --color-bg: ${props => (props.theme.mode === "light" ? `#fff` : `#1c1c1e`)};
+    --color-bg-blockQuote: ${props =>
+      props.theme.mode === "light" ? `#f5f5f5` : `#1f1f1f`};
     --color-footer: ${props =>
       props.theme.mode === "light"
         ? `linear-gradient(180deg, var(--color-bg), #e0e0e0)`

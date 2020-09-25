@@ -10,10 +10,12 @@ import Tags from "./Tags";
 import Search from "./Search";
 import Footer from "./Footer";
 import CodeSnippet from "./CodeSnippet";
+import Link from "./Link";
 
 export {
   Footer,
   CodeSnippet,
+  Link,
   Search,
   Layout,
   SEO,

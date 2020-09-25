@@ -13,7 +13,13 @@ import { MarkGithubIcon } from "@primer/octicons-react";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import { Layout, SEO, Tags, CodeSnippet } from "@components";
+import {
+  Layout,
+  SEO,
+  Tags,
+  CodeSnippet,
+  Link as CustomizedLink,
+} from "@components";
 import { container, media } from "@styles/mixins";
 import { useScrollDirection } from "@hooks";
 import { PostQuery, IndexQueryQuery } from "@generated/graphql";
@@ -169,6 +175,18 @@ const StyledPostContent = styled.div`
       a {
         opacity: 1;
       }
+    }
+  }
+
+  blockquote {
+    margin-left: 0;
+    border-radius: 6px;
+    background: var(--color-bg-blockQuote);
+    font-style: italic;
+    padding: 1rem;
+
+    p {
+      margin: 0;
     }
   }
 
@@ -405,7 +423,7 @@ const PostTemplate: React.FC<PostTemplateProps> = ({
     <Layout>
       <SEO data={SEOData} />
       <StyledPostLayout>
-        <MDXProvider components={{ CodeSnippet }}>
+        <MDXProvider components={{ CodeSnippet, a: CustomizedLink }}>
           <StyledPostContainer>
             <StyledPost>
               {mdx.frontmatter.thumbnail && (
