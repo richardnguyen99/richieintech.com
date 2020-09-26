@@ -30,12 +30,21 @@ const StyledAnchor = styled.a`
   }
 `;
 
-const CustomizedLink = React.forwardRef<HTMLAnchorElement>((props, ref) => (
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  <StyledAnchor ref={ref} {...props}>
-    {props.children}
-  </StyledAnchor>
-));
+const StyledNormalLink = styled.a``;
+
+const CustomizedLink = React.forwardRef<HTMLAnchorElement>((props, ref) => {
+  return React.Children.count(props.children) === 1 ? (
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <StyledAnchor ref={ref} {...props}>
+      {props.children}
+    </StyledAnchor>
+  ) : (
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <StyledNormalLink ref={ref} {...props}>
+      {props.children}
+    </StyledNormalLink>
+  );
+});
 
 CustomizedLink.displayName = "CustomizedLink";
 

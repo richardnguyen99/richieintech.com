@@ -130,7 +130,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1040,
+              maxWidth: 560,
             },
           },
           {
@@ -164,6 +164,13 @@ module.exports = {
       options: {
         names: `thumbnails`,
         path: path.join(__dirname, `content`, `thumbnails`),
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        names: `mdxImages`,
+        path: path.join(__dirname, `content`, `images`),
       },
     },
     {

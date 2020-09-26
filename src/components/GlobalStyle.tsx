@@ -320,13 +320,23 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+  .gatsby-highlight-code-line {
+  background-color: #444;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid #28cd41;
+}
+
   code[class*="language-"],
 pre[class*="language-"] {
 	color: #ccc;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
-	white-space: pre;
+	white-space: break-spaces;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
@@ -343,6 +353,7 @@ pre[class*="language-"] {
 
 }
 
+
 /* Code blocks */
 pre[class*="language-"] {
 	padding: 1em;
@@ -353,6 +364,15 @@ pre[class*="language-"] {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 	overflow: auto;
+}
+
+code[class="language-bash"] {
+  white-space: normal;
+}
+
+pre[class="language-bash"] {
+  overflow-x: hidden;
+  border-radius: 6px;
 }
 
 :not(pre) > code[class*="language-"],

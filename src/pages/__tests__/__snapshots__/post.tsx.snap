@@ -237,16 +237,16 @@ Array [
     }
   >
     <section
-      className="sc-fzqBkg krwDGi"
+      className="sc-fzqPZZ kwXTwE"
     >
       <div
-        className="sc-fznzOf gHQgAW"
+        className="sc-fznMnq gvtLoX"
       >
         <span
-          className="sc-fznMnq frXcBV"
+          className="sc-fzoant ksHKWd"
         >
           <input
-            className="sc-fzoant bYZJKS"
+            className="sc-fzomME jYJJlM"
             id="search"
             onChange={[Function]}
             placeholder="Search posts"
@@ -256,7 +256,7 @@ Array [
         </span>
       </div>
       <div
-        className="sc-fzqPZZ zbvLp"
+        className="sc-fzoxKX jXKmwo"
       >
         <h1>
           Newest
@@ -267,13 +267,13 @@ Array [
         </h4>
       </div>
       <div
-        className="sc-fzoxKX leIaFS"
+        className="sc-fzoKki bPWdFE"
       >
         <div
-          className="sc-fzoKki haMVWK"
+          className="sc-fzoYkl gAgVVh"
         >
           <a
-            className="sc-fzpkJw bTcbwW"
+            className="sc-fznzOf kFGYkB"
             href="/"
           >
             <h4>

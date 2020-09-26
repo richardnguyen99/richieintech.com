@@ -179,6 +179,7 @@ const StyledPostContent = styled.div`
   }
 
   blockquote {
+    margin-right: 0;
     margin-left: 0;
     border-radius: 6px;
     background: var(--color-bg-blockQuote);

@@ -237,22 +237,22 @@ Array [
     }
   >
     <section
-      className="sc-fznzOf btAVXG"
+      className="sc-fznMnq gUeFCL"
     >
       <div
-        className="sc-fznMnq gAGyeo"
+        className="sc-fzoant fYhfUU"
       >
         <h3
-          className="sc-fzoant OSKjm"
+          className="sc-fzomME faiiaE"
         >
           Latest Posts
         </h3>
         <div>
           <div
-            className="sc-fzomME jYIJAG"
+            className="sc-fzqAbL hguQpa"
           >
             <a
-              className="sc-fzqAbL cdBcBe"
+              className="sc-fzqMAW kdYNoS"
               href="/"
             >
               <h4>
@@ -277,10 +277,10 @@ Array [
         </div>
       </div>
       <div
-        className="sc-fzqMAW fNoIjr"
+        className="sc-fzoydu kCZtC"
       >
         <h3
-          className="sc-fzoant OSKjm"
+          className="sc-fzomME faiiaE"
         >
           Tags
         </h3>
@@ -294,7 +294,7 @@ Array [
         </div>
       </div>
       <div
-        className="sc-fzoydu etnAMJ"
+        className="sc-fzoJMP VVoWe"
       />
     </section>
   </div>,
