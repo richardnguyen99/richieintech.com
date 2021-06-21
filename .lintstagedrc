@@ -1,4 +1,0 @@
-{
-  "**/*.ts?(x)": "yarn run lint",
-  "**/*.scss": "yarn run lint:styled",
-}
