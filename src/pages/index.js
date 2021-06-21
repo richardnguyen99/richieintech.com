@@ -1,5 +1,17 @@
+/**
+ * Home page of the Gatsby site
+ * 
+ * @author Richard Nguyen <richard.ng0616@gmail.com>
+ */
+
 import React from "react";
 
-const Index = () => <h1>Hello Gatsby!</h1>;
+import Layout from "../components/layout";
+
+const Index = () => (
+    <Layout>
+        <h1>Hello Gatsby!</h1>
+    </Layout>
+);
 
 export default Index;
